@@ -1,0 +1,45 @@
+backend:
+  name: github
+  repo: ajay17141994/updatednetify # Path to your GitHub repository
+
+media_folder: "images/uploads"
+
+collections:
+  - label: "Blog posts"
+    name: "blog-posts"
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - label: "Layout"
+        name: "layout"
+        widget: "hidden"
+        default: "post"
+      - label: "Title"
+        name: "title"
+        widget: "string"
+      - label: "Date"
+        name: "date"
+        widget: "string"
+      - label: "Category"
+        name: "categories"
+        widget: "hidden"
+        default: "Product Listing"
+      - label: "Heading one"
+        name: "heading_one"
+        widget: "string"
+      - label: "Heading Two"
+        name: "heading_two"
+        widget: "string"
+      - label: "Heading Three"
+        name: "heading_three"
+        widget: "string"
+      - label: "Sub Footer"
+        name: "sub_footerData"
+        widget: "string"
+      - label: "Description"
+        name: "description"
+        widget: "string"
+      - label: "Body"
+        name: "body"
+        widget: "markdown"

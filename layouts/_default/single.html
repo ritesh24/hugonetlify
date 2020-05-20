@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    {{ partial "head" .}}
+<body>
+<div class="outerContainer">
+    {{ partial "navigation" .}}
+  <div class="mainContainer">
+    <div class= 'rightPart'>
+      {{ .Content }}
+      {{ partial "staticdata" .}}
+      <div class="subWrapper">
+        {{.Params.sub_footerData}}
+      </div>  
+    </div>
+    <div class= 'left'>
+      <div class="leftWrapper">
+        <div class="top_section">
+          <p class="percentage">0.89%</p>
+          <p class="interateRate">Per month interest rate*</p>
+        </div>
+        <div class="mid_section">
+          <p class="paraone">gold loans made</p>
+          <p class="paratwo">fair fast and flexible</p>
+          <div class="led_imagewrapper">
+            <div class="back_circle"></div>
+            <img src="../images/uploads/image-14@3x@2x.png"/>
+          </div>
+        </div>
+        <div class="bottom_section">
+          <div class="input_wrapper">
+            <input class="mobile_no" type="number" name="mobile_number" placeholder="Enter Your Mobile Number"/>
+            <button class="action_button">Apply Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+      
+     
+  </div>
+</div>
+
+
+
+<script>
+  var test="hasr layout, btm layout, nagawara, manyata tech park".split(/[,\-_]/)
+  console.log("test", test);
+
+
+    function myFunction() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }
+    function testing(e){
+      document.getElementById("selectedValue").value=e.target.innerText;
+      document.getElementById("selectedValue").innerHTML=e.target.innerText;
+      document.getElementById("localities_select").style.display="none";
+
+    }
+
+    function toggleDiv(id) {
+    var div = document.getElementById("localities_select");
+    console.log("DIV", div);
+    div.style.display = div.style.display == "block" ? "none" : "block";
+}
+</script>
+</body>
+</html>
