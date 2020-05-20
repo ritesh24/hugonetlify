@@ -1,11 +1,11 @@
 backend:
   name: github
-  repo: ajay17141994/updatednetify # Path to your GitHub repository
+  repo: ajay17141994/hugonetlify  # Path to your GitHub repository
 
 media_folder: "images/uploads"
 
 collections:
-  - label: "Blog posts"
+  - label: "Blog posts Hugo"
     name: "blog-posts"
     folder: "_posts"
     create: true
