@@ -3,6 +3,7 @@
     {{ partial "head" .}}
 <body>
 <div class="outerContainer">
+    <div id="localities">{{ .Params.sub_locality}}</div>
     {{ partial "navigation" .}}
   <div class="mainContainer">
     <div class= 'rightPart'>
@@ -45,6 +46,7 @@
 <script>
   var test="hasr layout, btm layout, nagawara, manyata tech park".split(/[,\-_]/)
   console.log("test", test);
+  console.log("testinh ki data aaya ki nai", document.getElementById("localities"))
 
 
     function myFunction() {
@@ -63,8 +65,13 @@
     }
 
     function toggleDiv(id) {
-    var div = document.getElementById("localities_select");
-    console.log("DIV", div);
+    let div = document.getElementById("localities_select");
+    let sublocalities=document.getElementById("localities").innerText.split(/[,\-_]/)
+    for (i=0;i<sublocalities.length;i++)
+        {
+            document.getElementById("localities_select").innerHTML += "<li class='customselect_li localities_option'>"+sublocalities[i]+"</li>"
+        }
+
     div.style.display = div.style.display == "block" ? "none" : "block";
 }
 </script>
