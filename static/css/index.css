@@ -52,7 +52,7 @@ html, body{padding:0;margin:0;font-family: Arial, Helvetica, sans-serif;}
 .timeline_section .advantage_para{padding: 10px 0px 0px 0px;font-size: 16px;font-weight: 500;color:#480a00;margin:0px 0px}
 .rupeektimeline_wrapper{padding:40px 15px}
 .rupeekstep_timeline {position: relative;max-width: 1200px;margin: 0 auto;}
-.rupeekstep_timeline::after {content: '';position: absolute;width: 0px;background-color: transparent;top: 50px;bottom: 0;left: 0;margin-left: 0px;border: black;border-style: dotted;border-width: thin;border-color: #fca942;}
+.rupeekstep_timeline::after {content: '';position: absolute;width: 0px;background-color: transparent;top: 50px;bottom: 110px;left: 0;margin-left: 0px;border: black;border-style: dotted;border-width: thin;border-color: #fca942;}
 .timeline_container {padding: 10px 40px;position: relative;background-color: inherit;width: 100%;}
 .timeline_container::after {content: '';position: absolute;width: 25px;height: 25px;right: -17px;background-color: #484848;border: 4px solid #484848;top: 15px;border-radius: 50%;z-index: 1;}
 .timeline_content {padding: 0px 30px;background-color: white;position: relative;border-radius: 6px;}
@@ -100,8 +100,8 @@ html, body{padding:0;margin:0;font-family: Arial, Helvetica, sans-serif;}
 /* RUPEEK QUICK BANNER CSS ENDS HERE>> */
 
 /* LOCALITIES SECTION CSS GOES HERE>>>>>>>>>>> */
-.localities_select{ color:#727272;   width: 100%;display: block;height: 40px;background-color: #fff ;margin:10px 0;font-size: 14px;padding:0px 10px}
-.customselect_ul{background-color: #fff;border-radius: 4px;}
+.localities_select{ color:#727272;   width: 100%;display: block;height: 40px;background-color: #fff ;margin:10px 0;font-size: 14px;padding:0px 10px;}
+.customselect_ul{background-color: #fff;border-radius: 4px; max-height: 100px;overflow: scroll;}
 #localities_select{display: none;}
 .customselect_ul,.customselect_li{padding: 0px;margin:0px;list-style-type:none}
 .customselect_li{padding:5px}
@@ -114,6 +114,8 @@ option{display: none;}
 .localities_headingpara{font-size: 18px;font-weight: 500;color:#969696}
 .bottomsection_heading p{font-size: 21px;color:#484848;font-weight: 600;text-align: center;margin: 0px 0px;padding:2px}
 .localities_bottomsection{padding: 20px;background-color: #fff8ef;}
+.localities_wrapper{display: none;}
+.localities_bottomsection{display: none;}
 /* LOCALITIES SECTION CSS ENDS HERE>>>>>>>>>>>> */
 
 
@@ -121,9 +123,11 @@ option{display: none;}
 /* GET IN TOUCH SECTION STARTS HERE>>>>>>>>*/
 .getintouch_wrapper{padding: 10px;background-color: #fafafa    ;}
 .getintouch_heading{font-size: 32px;font-weight: 600;color:#484848;text-align: center;}
+.getintouch_heading p{margin:0px 0px;padding:10px}
 .getintouch_subheading{font-size: 20x;font-weight: 700;color:#484848;text-align: center;}
+.getintouch_subheading p{margin:0px 0px;padding: 0px 0px 40px 0px;}
 .localityname_section{display: flex;justify-content: space-around;align-items: center;flex-wrap: wrap;}
-.locality_name{width:30%;padding: 10px;margin-bottom:15px;font-size: 14px;font-weight: 700;;}
+.locality_name{width:30%;padding: 10px;margin-bottom:15px;font-size: 14px;font-weight: 700;text-decoration: none;color:#484848}
 /* GET IN TOUCH SECTION ENDS HERE>>>>>>>>>> */
 .subWrapper{padding:15px 0}
 /* TOPNAV CSS GOES HEREE.... */
@@ -181,20 +185,29 @@ text-align: left;
 /* TOP NAV CSS ENDS HERE... */
 
 
+/* FOOTER CSS GOES HERE>>> */
+.footer_wrapper{display: block;width:100%;background: linear-gradient(90deg, #f26622, #f78f1e);padding:30px 10px;}
+.footer_innerWrapper{display: flex;justify-content: center;align-items: center;flex-wrap: wrap;}
+.footer_data{color:#fff;padding: 10px 15px;}
+.footer_data a{color:#fff;text-decoration: none;}
+.footer_privacy{}
+/* FOOTER CSS ENDS HERE>>>> */
+
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
+.localities_wrapper, .localities_bottomsection{display: block;}
 .mainContainer{width:100%}
 .rightPart{flex:unset;width:100%;padding: 0px 5px 0px 10px;}
 .cityhead{text-align: left;font-size: 24px;}
-.para_section{font-size: 12px;}
-.list_heading{font-size: 14px;}
-.list_description{font-size: 12px;}
+.para_section{font-size: 14px;text-align: justify;}
+.list_heading{font-size: 16px;}
+.list_description{font-size: 14px;text-align: justify;}
 .rpkadv_heading{font-size: 21px;}
 .advantages-left, .advantages-rgt, .advantages-mid{flex-wrap: nowrap;width: 48%;padding: 0px;margin:5px 0px}
 .advantage_para{padding: 0px 0px 0px 0px;}
 .advantages-container{padding:15px 0px}
-.image_section img{width:20px;height:20px}
-.advantage_para{font-size: 9px;}
+.image_section img{width:30px;height:30px}
+.advantage_para{font-size: 12px;}
 .timeline_mainhead{font-size: 21px;}
 .timeline_subhead{font-size: 14px;}
 
@@ -203,12 +216,16 @@ text-align: left;
 .timeline_container::after {width:15px;height:15px}
 .left::after, .right::after {left:0}
 .timeline_number{top: 20px;left: 5px;font-size: 12px;}
-.rupeekstep_timeline::after{left:10px}
+.rupeekstep_timeline::after{left:15px}
 .timeline_content{padding: 0px 10px;}
 .timeline_section{padding: 5px;align-items: unset;}
 .timeline_section .image_section img {width:85px;height:60px}
-.timeline_heading{font-size: 13px;}
-.timeline_section .advantage_para{font-size: 10px;}
+.timeline_heading{font-size: 16px;}
+.timeline_section .advantage_para{font-size: 12px;text-align: justify;}
+.rupeekstep_timeline{border: 1px solid #dadada;
+    border-radius: 5px;
+    padding: 0px 5px;}
+    .getintouch_wrapper{display: none;}
 
 }
 

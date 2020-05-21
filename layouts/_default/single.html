@@ -2,88 +2,92 @@
 <html>
     {{ partial "head" .}}
 <body>
+<!-- OUTER CONTAINER -->
 <div class="outerContainer">
     <div id="localities" style="display: none;">{{ .Params.sub_locality}}</div>
     {{ partial "navigation" .}}
-  <div class="mainContainer">
-    <div class= 'rightPart'>
-      {{ partial "pageHeading_section" .}}
-      {{ partial "staticdata" .}}
-      <div class="subWrapper">
-        {{.Params.sub_footerData}}
-      </div> 
-      <div class="subWrapper">
-        {{ partial "getintouch_section" .}}
-    </div> 
+
+    <div class="mainContainer">
+        <!-- RIGHT PART/SECTION OF THE PAGE STARTS HERE -->
+        <div class= 'rightPart'>
+            {{ partial "pageHeading_section" .}}
+            {{ partial "staticdata" .}}
+            <div class="subWrapper">
+                {{.Params.sub_footerData}}
+            </div> 
+            <div class="subWrapper">
+                {{ partial "getintouch_section" .}}
+            </div> 
+        </div>
+        <!-- LEFT PART/SECTION OF THE PAGE STARTS HERE -->
+        <div class= 'left'>
+            <div class="leftWrapper">
+                <div class="top_section">
+                    <p class="percentage">0.89%</p>
+                    <p class="interateRate">Per month interest rate*</p>
+                </div>
+                <div class="mid_section">
+                    <p class="paraone">gold loans made</p>
+                    <p class="paratwo">fair fast and flexible</p>
+                    <div class="led_imagewrapper">
+                        <div class="back_circle"></div>
+                        <img src="../images/uploads/image-14@3x@2x.png"/>
+                    </div>
+                </div>
+                <!-- APPLY NOW WITH MOBILE NUMBER SECTION GOES HERE -->
+                <div class="bottom_section">
+                    <div class="input_wrapper">
+                        <input class="mobile_no" type="number" name="mobile_number" placeholder="Enter Your Mobile Number"/>
+                        <button class="action_button">Apply Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class= 'left'>
-      <div class="leftWrapper">
-        <div class="top_section">
-          <p class="percentage">0.89%</p>
-          <p class="interateRate">Per month interest rate*</p>
-        </div>
-        <div class="mid_section">
-          <p class="paraone">gold loans made</p>
-          <p class="paratwo">fair fast and flexible</p>
-          <div class="led_imagewrapper">
-            <div class="back_circle"></div>
-            <img src="../images/uploads/image-14@3x@2x.png"/>
-          </div>
-        </div>
-        <div class="bottom_section">
-          <div class="input_wrapper">
-            <input class="mobile_no" type="number" name="mobile_number" placeholder="Enter Your Mobile Number"/>
-            <button class="action_button">Apply Now</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+    <!-- FOOTER GOES HERE -->
+    {{ partial "footer" .}}
 </div>
 
 
 
-<script>
-  var test="hasr layout, btm layout, nagawara, manyata tech park".split(/[,\-_]/)
-  console.log("test", test);
-  console.log("testinh ki data aaya ki nai", document.getElementById("localities"))
+    <script>
+        // GETTING LOCALITY LIST ON PAGE LOAD (IIFE FUNCTION)
+        (function fetchLocality(){
+            let sublocalities=document.getElementById("localities").innerText.split(/[,\-_]/)
+            for (i=0;i<sublocalities.length;i++)
+            {
+                let localityData=sublocalities[i].replace(/ /g, "");
+                document.getElementById("localityname_desktop").innerHTML += "<a class='locality_name' href=/"+localityData+"><div>"+sublocalities[i]+"</div></a>"
+            }
+        })()
 
 
-    function myFunction() {
-      var x = document.getElementById("myTopnav");
-      if (x.className === "topnav") {
-        x.className += " responsive";
-      } else {
-        x.className = "topnav";
-      }
-    }
-    function testing(e){
-      document.getElementById("selectedValue").value=e.target.innerText;
-      document.getElementById("selectedValue").innerHTML=e.target.innerText;
-      document.getElementById("localities_select").style.display="none";
-
-    }
-
-    (function fetchLocality(){
-        let sublocalities=document.getElementById("localities").innerText.split(/[,\-_]/)
-        for (i=0;i<sublocalities.length;i++)
-        {
-            localityData=sublocalities[i].replace(/ /g, "");
-            console.log("cscsdcsdcdscdscdsc",localityData)
-            document.getElementById("localityname_desktop").innerHTML += "<a href=/"+localityData+"><div class='locality_name'>"+sublocalities[i]+"</a></div>"
+        // NAVIGATION CONTROL FIUNCTION FOR HAMBERG CLICK
+        function navigationControl() {
+        let topNav_divData = document.getElementById("myTopnav");
+        if (topNav_divData.className === "topnav") {
+            topNav_divData.className += " responsive";
+        } else {
+            topNav_divData.className = "topnav";
         }
-    })()
-    function toggleDiv(id) {
-    let div = document.getElementById("localities_select");
-    let sublocalities=document.getElementById("localities").innerText.split(/[,\-_]/)
-    console.log(" document.getElementById(localityname_desktop).innerHTML",  document.getElementById("localityname_desktop").innerHTML)
-    for (i=0;i<sublocalities.length;i++)
-        {
-            document.getElementById("localities_select").innerHTML += "<li class='customselect_li localities_option'>"+sublocalities[i]+"</li>"
         }
 
-    div.style.display = div.style.display == "block" ? "none" : "block";
-}
-</script>
+
+        // GETTING LOCALITY ON CLICK OF THE OPTIONS THAT HAS BEEN SELECTED BY THE USER
+        function gettingLocality(e){
+        document.getElementById("selectedValue").value=e.target.innerText;
+        document.getElementById("selectedValue").innerHTML=e.target.innerText;
+        document.getElementById("localities_select").style.display="none";
+        }
+
+        
+        // TOGGLE CUSTIOM MADE DROPDOWN FOR LOCALITY IN THE MOBILE
+        function toggleSelectoptions(id) {
+            let div = document.getElementById("localities_select");
+            let sublocalities=document.getElementById("localities").innerText.split(/[,\-_]/)
+            for (i=0;i<sublocalities.length;i++) document.getElementById("localities_select").innerHTML += "<li class='customselect_li localities_option'>"+sublocalities[i]+"</li>";
+            div.style.display = div.style.display == "block" ? "none" : "block";
+        }
+    </script>
 </body>
 </html>
