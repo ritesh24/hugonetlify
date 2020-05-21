@@ -1,6 +1,6 @@
 ---
 layout: post
-title: hebbal
+title: HebBal
 categories: Product Listing
 heading_one: testing bro
 heading_two: with
