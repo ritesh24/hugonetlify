@@ -123,7 +123,7 @@ option{display: none;}
 .getintouch_heading{font-size: 32px;font-weight: 600;color:#484848;text-align: center;}
 .getintouch_subheading{font-size: 20x;font-weight: 700;color:#484848;text-align: center;}
 .localityname_section{display: flex;justify-content: space-around;align-items: center;flex-wrap: wrap;}
-.locality_name{width:30%;padding: 20px;margin-bottom:15px}
+.locality_name{width:30%;padding: 10px;margin-bottom:15px;font-size: 14px;font-weight: 700;;}
 /* GET IN TOUCH SECTION ENDS HERE>>>>>>>>>> */
 .subWrapper{padding:15px 0}
 /* TOPNAV CSS GOES HEREE.... */
