@@ -64,12 +64,20 @@
 
     }
 
+    (function fetchLocality(){
+        let sublocalities=document.getElementById("localities").innerText.split(/[,\-_]/)
+        for (i=0;i<sublocalities.length;i++)
+        {
+            document.getElementById("localityname_desktop").innerHTML += "<div class='locality_name'>"+sublocalities[i]+"</div>"
+        }
+    })()
     function toggleDiv(id) {
     let div = document.getElementById("localities_select");
     let sublocalities=document.getElementById("localities").innerText.split(/[,\-_]/)
+    console.log(" document.getElementById(localityname_desktop).innerHTML",  document.getElementById("localityname_desktop").innerHTML)
     for (i=0;i<sublocalities.length;i++)
         {
-            document.getElementById("localities_select").innerHTML += "<li class='customselect_li localities_option'>"+sublocalities[i]+"</li>"
+            // document.getElementById("localities_select").innerHTML += "<li class='customselect_li localities_option'>"+sublocalities[i]+"</li>"
             document.getElementById("localityname_desktop").innerHTML += "<div class='locality_name'>"+sublocalities[i]+"</div>"
         }
 
