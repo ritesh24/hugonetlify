@@ -12,7 +12,7 @@ html, body{padding:0;margin:0;font-family: Arial, Helvetica, sans-serif;}
 .advantages-container{display: block;width:100%;background-color: #fafafa;padding: 15px;}
 .advantages-heading{display: block;font-size: 2.5rem;font-weight: 700;font-family: Arial, Helvetica, sans-serif;text-align: center;color:#000}
 .advantagesInner-wrapper{display: flex;flex-wrap: wrap; width:100%;flex-direction:row; justify-content: space-evenly;padding: 10px 0;}
-.advantages-left, .advantages-rgt, .advantages-mid{width:30%;background-color: #fff;color:#000;padding: 10px;display: flex;justify-content: left;align-items: center;flex-wrap: wrap;}
+.advantages-left, .advantages-rgt, .advantages-mid{width:30%;background-color: #fff;color:#000;padding: 10px;display: flex;justify-content: left;align-items: center;margin:10px}
 .advantages-left p, .advantages-rgt p{margin: 0px 0px 0px 0px;}
 /* ADVANTAGES SECTION CSS ENDS HERE....... */
 
@@ -50,7 +50,7 @@ html, body{padding:0;margin:0;font-family: Arial, Helvetica, sans-serif;}
 .timeline_section{width:100%;background-color: #fff;color:#000;padding: 10px;display: flex;justify-content: left;align-items: center;}
 .timeline_section .image_section img{width:140px;height:100px}
 .timeline_section .advantage_para{padding: 10px 0px 0px 0px;font-size: 16px;font-weight: 500;color:#480a00;margin:0px 0px}
-.rupeektimeline_wrapper{padding:0px 15px}
+.rupeektimeline_wrapper{padding:40px 15px}
 .rupeekstep_timeline {position: relative;max-width: 1200px;margin: 0 auto;}
 .rupeekstep_timeline::after {content: '';position: absolute;width: 0px;background-color: transparent;top: 50px;bottom: 0;left: 0;margin-left: 0px;border: black;border-style: dotted;border-width: thin;border-color: #fca942;}
 .timeline_container {padding: 10px 40px;position: relative;background-color: inherit;width: 100%;}
@@ -116,6 +116,15 @@ option{display: none;}
 .localities_bottomsection{padding: 20px;background-color: #fff8ef;}
 /* LOCALITIES SECTION CSS ENDS HERE>>>>>>>>>>>> */
 
+
+
+/* GET IN TOUCH SECTION STARTS HERE>>>>>>>>*/
+.getintouch_wrapper{padding: 10px;background-color: #fafafa    ;}
+.getintouch_heading{font-size: 32px;font-weight: 600;color:#484848;text-align: center;}
+.getintouch_subheading{font-size: 20x;font-weight: 700;color:#484848;text-align: center;}
+.localityname_section{display: flex;justify-content: space-around;align-items: center;flex-wrap: wrap;}
+.locality_name{width:30%;padding: 20px;margin-bottom:15px}
+/* GET IN TOUCH SECTION ENDS HERE>>>>>>>>>> */
 .subWrapper{padding:15px 0}
 /* TOPNAV CSS GOES HEREE.... */
 .topnav {

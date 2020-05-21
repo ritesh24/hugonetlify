@@ -3,16 +3,18 @@
     {{ partial "head" .}}
 <body>
 <div class="outerContainer">
-    <div id="localities">{{ .Params.sub_locality}}</div>
+    <div id="localities" style="display: none;">{{ .Params.sub_locality}}</div>
     {{ partial "navigation" .}}
   <div class="mainContainer">
     <div class= 'rightPart'>
       {{ partial "pageHeading_section" .}}
-      {{ .Content }}
       {{ partial "staticdata" .}}
       <div class="subWrapper">
         {{.Params.sub_footerData}}
-      </div>  
+      </div> 
+      <div class="subWrapper">
+        {{ partial "getintouch_section" .}}
+    </div> 
     </div>
     <div class= 'left'>
       <div class="leftWrapper">
@@ -36,8 +38,6 @@
         </div>
       </div>
     </div>
-      
-     
   </div>
 </div>
 
@@ -70,6 +70,7 @@
     for (i=0;i<sublocalities.length;i++)
         {
             document.getElementById("localities_select").innerHTML += "<li class='customselect_li localities_option'>"+sublocalities[i]+"</li>"
+            document.getElementById("localityname_desktop").innerHTML += "<div class='locality_name'>"+sublocalities[i]+"</div>"
         }
 
     div.style.display = div.style.display == "block" ? "none" : "block";
