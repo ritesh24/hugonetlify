@@ -18,7 +18,7 @@ collections:
       - label: "post type"
         name: "postType"
         widget: "hidden"
-        default: "city"
+        default: "sublocality"
       - label: "Meta Description"
         name: "meta_description"
         widget: "string"
