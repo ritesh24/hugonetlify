@@ -57,10 +57,12 @@
         // GETTING LOCALITY LIST ON PAGE LOAD (IIFE FUNCTION)
         (function fetchLocality(){
             let sublocalities=document.getElementById("localities").innerText.split(/[,\-_]/)
+            console.log("sublocalities", sublocalities);
             let postType=document.getElementById("postType").innerText
             for (i=0;i<sublocalities.length;i++)
             {
-                let localityData=sublocalities[i].replace(/ /g, "");
+                let localityData=sublocalities[i].trim();
+                localityData=localityData.replace(/ /g, "-")
                 document.getElementById("localityname_desktop").innerHTML += "<a class='locality_name' href=/"+postType+"/"+localityData+"><div>"+sublocalities[i]+"</div></a>"
             }
         })()
