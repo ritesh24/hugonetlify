@@ -7,6 +7,7 @@ heading_two: with
 heading_three: Rupeek
 description: testing bro
 sub_locality: testing
+home_pageHeading: "GOLD LOAN FOR HEBBAL"
 sub_footerData: testing bro
 ---
 testing bro

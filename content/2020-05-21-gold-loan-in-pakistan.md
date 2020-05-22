@@ -28,6 +28,7 @@ sub_footerData: t is a long established fact that a reader will be distracted by
   many web sites still in their infancy. Various versions have evolved over the
   years, sometimes by accident, sometimes on purpose (injected humour and the
   like).
+home_pageHeading: "GOLD LOAN FOR PAKISTAN"
 meta_description: "testing meta description"
 meta_keywords: "testing meta keyword"
 meta_author: "testing meta author"

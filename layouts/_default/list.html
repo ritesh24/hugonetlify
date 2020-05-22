@@ -6,21 +6,22 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../css/index.css">
     <style>
-        .listpost_wrapper{display:flex;justify-content: space-around;}
-        .posts{width:30%}
+        .listpost_wrapper {display: flex;justify-content: space-between;flex-wrap: wrap;align-items: center;}
+        .posts {box-shadow: 3px 0px 10px 0px #888888; width: 30%;text-align: center;background: linear-gradient(90deg, #f26622, #f78f1e);height: 100px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;color: #fff;font-size: 16px;padding: 20px;margin: 15px;}
+        .posts a{color:#fff;text-decoration: none;font-size: 22px;font-weight: 700;}
+        .locality_description{white-space: nowrap;overflow: hidden;text-overflow: ellipsis;padding: 10px 0;}
     </style>
   </head>
   <body>
         <div class="list">
             <!-- {{ partial "navigation" (dict "Kind" .Kind "Template" "List") }} -->
             <div class="listpost_wrapper">
-                <div class="posts">
-                    <div class="listpost_heading">{{.Content}}</div>
-                    {{ range .Pages }}
-                       <a href="{{ .URL }}"> {{ .Title }} </a></br>
-                        {{ .Content }}</br>
-                    {{ end }}
+                {{ range .Pages }}
+                <div class="posts">                    
+                    <a href="{{ .URL }}"> {{ .Params.Home_pageHeading }} </a>
+                    <div class="locality_description">{{ .Description }}</div>
                 </div>
+                {{ end }}
             </div>     
         </div>
       </body>
