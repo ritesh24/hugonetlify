@@ -10,6 +10,7 @@ home_pageHeading: GOLD LOAN IN RANCHI
 heading_one: Gold Loan in Ranchi
 heading_two: with
 heading_three: Rupeek
+postType: "sublocality"
 description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
   eiusmod tempor incididunt ut labore et dolore magna aliqua. Aliquet bibendum
   enim facilisis gravida neque convallis a cras semper. Purus non enim praesent

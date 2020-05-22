@@ -5,6 +5,7 @@
 <!-- OUTER CONTAINER -->
 <div class="outerContainer">
     <div id="localities" style="display: none;">{{ .Params.sub_locality}}</div>
+    <div id="postType" style="display: none;">{{ .Params.postType}}</div>
     {{ partial "navigation" .}}
 
     <div class="mainContainer">
@@ -56,10 +57,11 @@
         // GETTING LOCALITY LIST ON PAGE LOAD (IIFE FUNCTION)
         (function fetchLocality(){
             let sublocalities=document.getElementById("localities").innerText.split(/[,\-_]/)
+            let postType=document.getElementById("postType").innerText
             for (i=0;i<sublocalities.length;i++)
             {
                 let localityData=sublocalities[i].replace(/ /g, "");
-                document.getElementById("localityname_desktop").innerHTML += "<a class='locality_name' href=/"+localityData+"><div>"+sublocalities[i]+"</div></a>"
+                document.getElementById("localityname_desktop").innerHTML += "<a class='locality_name' href="+postType+"/"+localityData+"><div>"+sublocalities[i]+"</div></a>"
             }
         })()
 
