@@ -1,5 +1,124 @@
 
+<!DOCTYPE html>
 <html>
+    {{ partial "head" .}}
+<body>
+<!-- OUTER CONTAINER -->
+<div class="outerContainer">
+    <div id="localities" style="display: none;">{{ .Params.sub_locality}}</div>
+    <div id="postType" style="display: none;">{{ .Params.postType}}</div>
+    <div id="current_city" style="display: none;">{{ .Params.Title }}</div>
+    <!-- {{ partial "navigation" .}} -->
+    {{ partial "header" .}}
+    <div class="mainContainer">
+        <!-- RIGHT PART/SECTION OF THE PAGE STARTS HERE -->
+        <div class= 'rightPart'>
+            {{ partial "pageHeading_section" .}}
+            {{ partial "staticdata" .}}
+            <div class="subWrapper">
+                <div class="para_section">
+                    <p class="data">{{.Params.sub_footerData}}</p>
+                </div>
+            </div> 
+            <div class="subWrapper">
+                <div class="list">
+                    <div class="listpost_wrapper">
+                        {{ range .Pages }}
+                        <div class="posts">                    
+                            <a href="{{ .URL }}"> {{ .Params.Home_pageHeading }} </a>
+                            <!-- <div class="locality_description">{{ .Description }}</div> -->
+                        </div>
+                        {{ end }}
+                    </div>     
+                </div>
+                <!-- {{ partial "getintouch_section" .}} -->
+            </div> 
+        </div>
+        <!-- LEFT PART/SECTION OF THE PAGE STARTS HERE -->
+        <div class= 'left'>
+            <div class="leftWrapper">
+                <div class="top_section">
+                    <p class="percentage">0.89%</p>
+                    <p class="interateRate">Per month interest rate*</p>
+                </div>
+                <div class="mid_section">
+                    <p class="paraone">gold loans made</p>
+                    <p class="paratwo">fair fast and flexible</p>
+                    <div class="led_imagewrapper">
+                        <div class="back_circle"></div>
+                        <!-- <img class="permonth_interestimgae" src="../../images/uploads/image-14@3x@2x.png" alt="permonth_interest"/> -->
+                    </div>
+                </div>
+                <!-- APPLY NOW WITH MOBILE NUMBER SECTION GOES HERE -->
+                <div class="bottom_section">
+                    <div class="input_wrapper">
+                        <input class="mobile_no" type="number" name="mobile_number" placeholder="Enter Your Mobile Number"/>
+                        <button class="action_button">Apply Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- FOOTER GOES HERE -->
+    {{ partial "footer" .}}
+    {{ partial "menumodal_mobile" .}}
+</div>
+
+
+
+    <script>
+        // GETTING LOCALITY LIST ON PAGE LOAD (IIFE FUNCTION)
+        (function fetchLocality(){
+            let sublocalities=document.getElementById("localities").innerText.split(/[,\-_]/)
+            console.log("sublocalities", sublocalities);
+            let postType=document.getElementById("postType").innerText
+            for (i=0;i<sublocalities.length;i++)
+            {
+                let localityData=sublocalities[i].trim();
+                localityData=localityData.replace(/ /g, "-")
+                document.getElementById("localityname_desktop").innerHTML += "<a class='locality_name' href=/"+postType+"/"+localityData+"><div>"+sublocalities[i]+"</div></a>"
+            }
+        })()
+
+
+        // NAVIGATION CONTROL FIUNCTION FOR HAMBERG CLICK
+        function navigationControl() {
+        let topNav_divData = document.getElementById("myTopnav");
+        if (topNav_divData.className === "topnav") {
+            topNav_divData.className += " responsive";
+        } else {
+            topNav_divData.className = "topnav";
+        }
+        }
+
+
+        // GETTING LOCALITY ON CLICK OF THE OPTIONS THAT HAS BEEN SELECTED BY THE USER
+        function gettingLocality(e){
+        document.getElementById("selectedValue").value=e.target.innerText;
+        document.getElementById("selectedValue").innerHTML=e.target.innerText;
+        document.getElementById("localities_select").style.display="none";
+        }
+
+        
+        // TOGGLE CUSTIOM MADE DROPDOWN FOR LOCALITY IN THE MOBILE
+        function toggleSelectoptions(id) {
+            let div = document.getElementById("localities_select");
+            let sublocalities=document.getElementById("localities").innerText.split(/[,\-_]/)
+            
+            for (i=0;i<sublocalities.length;i++)
+            {
+                let localityData=sublocalities[i].trim();
+                localityData=localityData.replace(/ /g, "-")
+                document.getElementById("localities_select").innerHTML += "<li class='customselect_li localities_option'><a class='locality_name' href=/"+postType+"/"+localityData+">"+sublocalities[i]+"</a></li>"
+            };
+            div.style.display = div.style.display == "block" ? "none" : "block";
+        }
+
+       
+    </script>
+</body>
+</html>
+<!-- <html>
     <head>
     <title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,7 +133,6 @@
   </head>
   <body>
         <div class="list">
-            <!-- {{ partial "navigation" (dict "Kind" .Kind "Template" "List") }} -->
             <div class="listpost_wrapper">
                 {{ range .Pages }}
                 <div class="posts">                    
@@ -25,4 +143,4 @@
             </div>     
         </div>
       </body>
-</html>
+</html> -->

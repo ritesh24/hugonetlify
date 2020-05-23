@@ -1,4 +1,4 @@
-<div class="topnav" id="myTopnav">
+<!-- <div class="topnav" id="myTopnav">
     <a href="/jaipur" class="active">Home</a>
     <a href="/delhi">Two</a>
     <a href="/rohtak">Three</a>
@@ -6,4 +6,60 @@
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
       <i class="fa fa-bars"></i>
     </a>
+</div> -->
+
+<style>
+  p{margin: 0px 0px;}
+  .navigation_wrapper{display: block;width:100%;padding:8px 30px;background: linear-gradient(90deg, #f26622, #f78f1e);}
+  .navigation_innerWrapper{display: flex;justify-content: space-evenly;align-items: center;width:85%;margin:0 auto}
+  .left_nav{display: flex;flex:2;}
+  .mid_nav{flex:3;}
+  .right_nav{flex:1;padding: 10px 30px;margin: 0 0px 0px 30px;border-left: 1px solid #fff;}
+  .navrow_wrapper{display:block;margin: 0 15px;border-left: 1px solid #fff;padding:0 0px 0px 15px;}
+  .navrow_wrappertext{color:#fff;padding: 0px 0;}
+  .approveby{font-size: 0.5rem;}
+  .reserve_text{font-size: 0.8rem;font-weight: 700;}
+  .regn{font-size: 0.5rem;}
+  .menuitem_ul{padding:0;margin:0;;display: flex;}
+  .menuitem_li{flex:auto;list-style-type:none;font-size: 1.0rem;font-weight: 400;}
+  .menuitem_href{color:#fff;text-decoration: none;}
+  .nav_cityname{padding:0 10px;font-size: 1.0rem;font-weight: 500;color:#fff}
+  .nav_locationmarker{vertical-align: middle;}
+  @media screen and (max-width: 600px) {
+    .navigation_innerWrapper{width: 100%;}
+    .mid_nav, .right_nav{display: none;}
+    .rupeek_logo{width:80px;height: auto;}
+    .icon{color:#fff}
+  }
+</style>
+
+
+<div class="navigation_wrapper">
+  <div class="navigation_innerWrapper">
+    <div class="left_nav">
+      <img class="rupeek_logo" src="../../images/uploads/logo_rupeek.svg" alt="ruppeek.com"/>
+      <div class="navrow_wrapper">
+        <p class="navrow_wrappertext approveby">Approved By</p>
+        <p class="navrow_wrappertext reserve_text">RESERVE</p>
+        <p class="navrow_wrappertext reserve_text">BANK OF INDIA</p>
+        <p class="navrow_wrappertext regn"> Regn No. N-02.00290</p>
+      </div>  
+      </div>
+    <div class="mid_nav">
+      <ul class="menuitem_ul">
+        <li class="menuitem_li"><a class="menuitem_href" href="">About</a></li>
+        <li class="menuitem_li"><a class="menuitem_href" href="">Schemes</a></li>
+        <li class="menuitem_li"><a class="menuitem_href" href="">Loan Transfer</a></li>
+        <li class="menuitem_li"><a class="menuitem_href" href="">Contact</a></li>
+        <li class="menuitem_li"><a class="menuitem_href" href="">Repay your Loan</a></li>
+      </ul>
+    </div>
+    <div class="right_nav">
+      <img class="nav_locationmarker" src="../../images/uploads/icon_location_white.svg" alt="marker"/>
+      <span class="nav_cityname">Bangalore</span>
+    </div>
+    <a href="#" id="myBtn" class="icon" >
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
 </div>
