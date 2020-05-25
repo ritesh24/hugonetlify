@@ -19,8 +19,12 @@ select {-webkit-appearance: none;-moz-appearance: none;text-indent: 1px;text-ove
 .select_cityli:hover a{color:#fca942}
 .select_cityli:hover .nav_locationmarker{display: none;}
 .select_cityli:hover .nav_locationmarkerselected{display: inline-block;vertical-align: middle;}
-#info_popup{display: none;text-align: center;color:green}
-#errorinfo_popup{display: none;text-align: center;color:red}
+.info_popup{text-align: center;color:green;padding: 5px 0;}
+.errorinfo_popup{text-align: center;color:red;padding: 5px 0;}
+#info_popup{display: none}
+#errorinfo_popup{display: none;}
+#desktopinfo_popup{display: none;}
+#desktoperrorinfo_popup{display: none;}
 /* SELECT CITY CSS GOES HERE */
 .select_city{position: absolute;width: 95vw;background: #fff;z-index: 1;top: 75px;left: 15px;border: 1px solid #cdcdcd;box-shadow: 2px 1px 8px 6px #cdcdcd;border-radius: 10px;padding: 20px;}
 /* SELECT CITY CSS GOES HERE */
@@ -91,7 +95,7 @@ select {-webkit-appearance: none;-moz-appearance: none;text-indent: 1px;text-ove
 /* PARA SECTION CSS GOES HERE */
 .para_section{font-size: 16px;font-weight: 400;color:#484848;padding: 10px 0;}
 .para_section .data{margin:0px 0px;line-height: 1.5;}
-.para_section p{margin:0px 0px;line-height: 1.5;}
+.para_section p{margin:0px 0px;line-height: 1.5;padding: 0px 0px 15px 0px;}
 /* PARA SECTION CSS ENDS HERE */
 
 /* LEFT PART CSS GOES HERE.. */
@@ -153,7 +157,8 @@ select {-webkit-appearance: none;-moz-appearance: none;text-indent: 1px;text-ove
 .getintouch_subheading p{margin:0px 0px;padding: 0px 0px 40px 0px;}
 .localityname_section{display: flex;justify-content: space-around;align-items: center;flex-wrap: wrap;}
 .locality_name{width:30%;padding: 10px;margin-bottom:15px;font-size: 14px;font-weight: 700;text-decoration: none;color:#484848}
-.getintouch_city{text-transform: capitalize}
+.getintouch_city{text-transform: lowercase}
+.getintouch_city::first-letter{ text-transform: uppercase;}
 /* GET IN TOUCH SECTION ENDS HERE>>>>>>>>>> */
 .subWrapper{padding:15px 0}
 

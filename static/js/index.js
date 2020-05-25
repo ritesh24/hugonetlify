@@ -138,10 +138,12 @@ function pushMobileGoogleSheet(target) {
       xhr.onload = function() {
         console.log(`Loaded: ${xhr.status} ${xhr.response}`);
         document.getElementById("info_popup").style.display="block"
+        document.getElementById("desktopinfo_popup").style.display="block"
       };
       xhr.onerror = function() { // only triggers if the request couldn't be made at all
         alert(`Network Error`);
         document.getElementById("errorinfo_popup").style.display="block"
+        document.getElementById("desktoperrorinfo_popup").style.display="block"
       };
   }
 
