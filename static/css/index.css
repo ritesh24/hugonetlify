@@ -26,7 +26,7 @@ select {-webkit-appearance: none;-moz-appearance: none;text-indent: 1px;text-ove
 
 /* LISR PAGE CSS GOES HERE... */
 .listpost_wrapper {display: flex;justify-content: space-between;flex-wrap: wrap;align-items: center;}
-.posts { width: 44%;text-align: center;height: 100px;color: #484848;font-size: 16px;padding: 20px;margin: 15px;}
+.posts { width: 30%;text-align: center;height: 100px;color: #484848;font-size: 16px;padding: 20px;margin: 0px;}
 .posts a{color:#484848;text-decoration: none;font-size: 18px;font-weight: 700;}
 .locality_description{white-space: nowrap;overflow: hidden;text-overflow: ellipsis;padding: 10px 0;}
 /* LIST PAGE CSS ENDS HERE>>> */
