@@ -137,9 +137,11 @@ function pushMobileGoogleSheet(target) {
       xhr.send( JSON.stringify(schemes))
       xhr.onload = function() {
         console.log(`Loaded: ${xhr.status} ${xhr.response}`);
+        document.getElementById("info_popup").style.display="block"
       };
       xhr.onerror = function() { // only triggers if the request couldn't be made at all
         alert(`Network Error`);
+        document.getElementById("errorinfo_popup").style.display="block"
       };
   }
 

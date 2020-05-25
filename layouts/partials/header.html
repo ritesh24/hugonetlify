@@ -49,10 +49,10 @@
     </div>
     <div class="right_nav">
       <img class="nav_locationmarker" src="../../images/uploads/icon_location_white.svg" alt="marker"/>
-      {{ if .Params.parentCity }}
-        <span class="nav_cityname"><a href="#getintouch_wrapper">{{ .Params.parentCity }}</a></span>
+      {{ if .Params.Title }}
+        <span class="nav_cityname"><a href="#getintouch_wrapper">{{ .Params.Title }}</a></span>
       {{ else }}
-        <span class="nav_cityname">Other City</span>
+        <span class="nav_cityname"><a href="/city/#getintouch_wrapper">Other City</a></span>
       {{ end }}
 
       

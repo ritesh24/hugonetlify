@@ -19,14 +19,15 @@ select {-webkit-appearance: none;-moz-appearance: none;text-indent: 1px;text-ove
 .select_cityli:hover a{color:#fca942}
 .select_cityli:hover .nav_locationmarker{display: none;}
 .select_cityli:hover .nav_locationmarkerselected{display: inline-block;vertical-align: middle;}
-
+#info_popup{display: none;text-align: center;color:green}
+#errorinfo_popup{display: none;text-align: center;color:red}
 /* SELECT CITY CSS GOES HERE */
 .select_city{position: absolute;width: 95vw;background: #fff;z-index: 1;top: 75px;left: 15px;border: 1px solid #cdcdcd;box-shadow: 2px 1px 8px 6px #cdcdcd;border-radius: 10px;padding: 20px;}
 /* SELECT CITY CSS GOES HERE */
 
 /* LISR PAGE CSS GOES HERE... */
-.listpost_wrapper {display: flex;justify-content: space-between;flex-wrap: wrap;align-items: center;}
-.posts { width: 30%;text-align: center;height: 100px;color: #484848;font-size: 16px;padding: 20px;margin: 0px;}
+.listpost_wrapper {display: flex;justify-content: left;flex-wrap: wrap;align-items: center;}
+.posts { width: 30%;text-align: left;height: 70px;color: #484848;font-size: 16px;padding: 20px;margin: 0px;text-transform: uppercase;}
 .posts a{color:#484848;text-decoration: none;font-size: 18px;font-weight: 700;}
 .locality_description{white-space: nowrap;overflow: hidden;text-overflow: ellipsis;padding: 10px 0;}
 /* LIST PAGE CSS ENDS HERE>>> */
@@ -207,7 +208,7 @@ select {-webkit-appearance: none;-moz-appearance: none;text-indent: 1px;text-ove
     .left{display: unset;}
     .led_imagewrapper .back_circle{left:20px}
     .advantages-left, .advantages-rgt, .advantages-mid {width:45%}
-    .led_imagewrapper{background-size: 100% 175%;background-position: 0% 100%;height:200px}
+    .led_imagewrapper{background-size: 100% 175%;background-position: 0% 100%;height:250px}
     .mid_nav, .right_nav{display: none;}
     .icon{color:#fff;display: block;}
     .cityhead{text-align: left;font-size: 24px;}

@@ -11,6 +11,7 @@
           <button class="action_button" id="capture_mobileNumber" onclick="capture_mobileNumber(document.getElementById('mobile_number').value)" >Apply Now</button>
         </div>
     </div>
+    {{ partial "successpopup_section" .}}
     <div class="bottom_section" id="pincode_Input" style="display: none;">
       <div class="input_wrapper">
         <input class="pincode" type="number" id="pincode" name="pincode" onfocus="document.getElementById('pincode_errormessage').style.display='none'" placeholder="Enter pincode" name="pincode" pattern="[0-9]{6}" maxlength="6" oninput="value = value.replace(/[^0-9]/g, '').replace(/(\.*)\./g, '$1');"
