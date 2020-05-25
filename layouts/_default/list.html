@@ -24,10 +24,12 @@
                 <div class="list">
                     <div class="listpost_wrapper">
                         {{ range .Pages }}
+                        {{ if eq .Params.locality_type "City"}}
                         <div class="posts">                    
                             <a href="{{ .URL }}"> {{ .Params.Home_pageHeading }} </a>
                             <!-- <div class="locality_description">{{ .Description }}</div> -->
                         </div>
+                        {{end}}
                         {{ end }}
                     </div>     
                 </div>
@@ -36,27 +38,7 @@
         </div>
         <!-- LEFT PART/SECTION OF THE PAGE STARTS HERE -->
         <div class= 'left'>
-            <div class="leftWrapper">
-                <div class="top_section">
-                    <p class="percentage">0.89%</p>
-                    <p class="interateRate">Per month interest rate*</p>
-                </div>
-                <div class="mid_section">
-                    <p class="paraone">gold loans made</p>
-                    <p class="paratwo">fair fast and flexible</p>
-                    <div class="led_imagewrapper">
-                        <div class="back_circle"></div>
-                        <!-- <img class="permonth_interestimgae" src="../../images/uploads/image-14@3x@2x.png" alt="permonth_interest"/> -->
-                    </div>
-                </div>
-                <!-- APPLY NOW WITH MOBILE NUMBER SECTION GOES HERE -->
-                <div class="bottom_section">
-                    <div class="input_wrapper">
-                        <input class="mobile_no" type="number" name="mobile_number" placeholder="Enter Your Mobile Number"/>
-                        <button class="action_button">Apply Now</button>
-                    </div>
-                </div>
-            </div>
+            {{ partial "leftpart_section" .}}
         </div>
     </div>
     <!-- FOOTER GOES HERE -->

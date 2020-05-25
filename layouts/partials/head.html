@@ -1,5 +1,5 @@
 <head>
-    <title>{{.Params.tabTitle}}</title>
+    <title>{{.Params.titleTag}}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content={{.Params.meta_description}}>
     <meta name="keywords" content={{.Params.meta_keywords}}>
@@ -7,4 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/css/index.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-229086812"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        console.log(" window.dataLayer",  window.dataLayer);
+        function gtag(){
+            console.log("INSIDE GTAG FUNCTION", arguments);
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        console.log("FTAG SECOND", gtag('js', new Date()))
+        gtag('config', 'AW-229086812');
+        console.log("GTAG LAT ONE",  gtag('config', 'AW-229086812'))
+    </script>
   </head>

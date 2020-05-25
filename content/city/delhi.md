@@ -10,6 +10,7 @@ title: DELHI
 home_pageHeading: GOLD LOAN IN DELHI
 heading_one: Gold Loan in Delhi
 heading_two: with
+parentCity: delhi
 heading_three: Rupeek
 description: Lorem Ipsum is simply dummy text of the printing and typesetting
   industry. Lorem Ipsum has been the industry's standard dummy text ever since

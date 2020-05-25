@@ -5,14 +5,15 @@
 <div class="localities_wrapper">
     <div class="localities_topsection">
         <div class="getin_touch">
-            <p class="localities_headingpara"><b style="color:#484848">Get in touch</b> with us for the best gold loan in Bangalore.</p>
+            <p class="localities_headingpara"><b style="color:#484848">Get in touch</b> with us for the best gold loan in <span class="getintouch_city">{{ .Params.parentCity }}</span>.</p>
         </div>
         <div class="selectoption_wrapper">
+            <span class="arrow_iconSelect">▲</span>
             <select class="localities_select" onclick="toggleSelectoptions()">
                 <option  id="selectedValue" value="starter" selected>List of Localitties </option> 
 
             </select>
-            <ul class="customselect_ul" id="localities_select" onclick="gettingLocality(event)">
+            <ul class="customselect_ul" id="localities_select" >
             </ul>
         </div>
     </div>

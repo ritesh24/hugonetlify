@@ -1,12 +1,3 @@
-<!-- <div class="topnav" id="myTopnav">
-    <a href="/jaipur" class="active">Home</a>
-    <a href="/delhi">Two</a>
-    <a href="/rohtak">Three</a>
-    <a href="/bangalore">Four</a>
-    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-      <i class="fa fa-bars"></i>
-    </a>
-</div> -->
 
 <style>
   p{margin: 0px 0px;}
@@ -23,8 +14,10 @@
   .menuitem_ul{padding:0;margin:0;;display: flex;}
   .menuitem_li{flex:auto;list-style-type:none;font-size: 1.0rem;font-weight: 400;}
   .menuitem_href{color:#fff;text-decoration: none;}
-  .nav_cityname{padding:0 10px;font-size: 1.0rem;font-weight: 500;color:#fff}
+  .nav_cityname{padding:0 10px;font-size: 1.0rem;font-weight: 500;color:#fff;text-transform: capitalize;cursor: pointer;}
+  .nav_cityname a{text-decoration: none;;color:#fff}
   .nav_locationmarker{vertical-align: middle;}
+  .select_cityli a{color:#484848;text-decoration: none;}
   @media screen and (max-width: 600px) {
     .navigation_innerWrapper{width: 100%;}
     .mid_nav, .right_nav{display: none;}
@@ -47,16 +40,35 @@
       </div>
     <div class="mid_nav">
       <ul class="menuitem_ul">
-        <li class="menuitem_li"><a class="menuitem_href" href="">About</a></li>
-        <li class="menuitem_li"><a class="menuitem_href" href="">Schemes</a></li>
-        <li class="menuitem_li"><a class="menuitem_href" href="">Loan Transfer</a></li>
-        <li class="menuitem_li"><a class="menuitem_href" href="">Contact</a></li>
-        <li class="menuitem_li"><a class="menuitem_href" href="">Repay your Loan</a></li>
+        <li class="menuitem_li"><a class="menuitem_href" href="https://rupeek.com/about" target="_blank">About</a></li>
+        <li class="menuitem_li"><a class="menuitem_href" href="https://rupeek.com/schemes" target="_blank">Schemes</a></li>
+        <li class="menuitem_li"><a class="menuitem_href" href="https://rupeek.com/loan-transfer" target="_blank">Loan Transfer</a></li>
+        <li class="menuitem_li"><a class="menuitem_href" href="https://rupeek.com/contact" target="_blank">Contact</a></li>
+        <li class="menuitem_li"><a class="menuitem_href" href="https://payments.rupeek.com/" target="_blank">Repay your Loan</a></li>
       </ul>
     </div>
     <div class="right_nav">
       <img class="nav_locationmarker" src="../../images/uploads/icon_location_white.svg" alt="marker"/>
-      <span class="nav_cityname">Bangalore</span>
+      {{ if .Params.parentCity }}
+        <span class="nav_cityname"><a href="#getintouch_wrapper">{{ .Params.parentCity }}</a></span>
+      {{ else }}
+        <span class="nav_cityname">Other City</span>
+      {{ end }}
+
+      
+      <!-- <div class="select_city">
+        <div class="select_citywrapper">
+          <ul class="select_cityul">
+              {{ range .Pages }}
+              <li class="select_cityli">
+                  <img class="nav_locationmarker" src="../../images/uploads/icon_location_gray.svg" alt="marker"/>
+                  <img class="nav_locationmarkerselected" src="../../images/uploads/icon_location_selected.svg" alt="marker"/>                   
+                    <a href="{{ .URL }}"> {{ .Params.title }} </a>
+              </li>
+              {{ end }}
+          </ul>
+        </div>
+      </div> -->
     </div>
     <a href="#" id="myBtn" class="icon" >
       <i class="fa fa-bars"></i>

@@ -8,7 +8,7 @@
           <input class="mobile_no" type="number" id="mobile_number" onfocus="document.getElementById('mobile_errormessage').style.display='none'"  name="mobile_number" placeholder="Enter Your Mobile Number" minlength="10" maxlength="10" oninput="value = value.replace(/[^0-9]/g, '').replace(/(\.*)\./g, '$1');" required
           />
           <span class="mobile_errormessage" id="mobile_errormessage">Please enter valid Mobile Number</span>
-          <button class="action_button" id="capture_mobileNumber" onclick="capture_mobileNumber()" >Proceed</button>
+          <button class="action_button" id="capture_mobileNumber" onclick="capture_mobileNumber(document.getElementById('mobile_number').value)" >Apply Now</button>
         </div>
     </div>
     <div class="bottom_section" id="pincode_Input" style="display: none;">

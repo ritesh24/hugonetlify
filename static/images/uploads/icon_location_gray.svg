@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16.142" height="19.239" viewBox="0 0 16.142 19.239">
+    <defs>
+        <style>
+            .cls-1{fill:none;stroke:#ccc;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-width:1.25px}
+        </style>
+    </defs>
+    <g id="icon_location" transform="translate(-977.375 -150.299)">
+        <path id="Path_684" d="M13.633 3.174l.039.039a7.407 7.407 0 0 1 0 10.475L8.4 18.964l-5.281-5.276a7.407 7.407 0 0 1 0-10.475l.039-.039a7.338 7.338 0 0 1 10.475 0z" class="cls-1" data-name="Path 684" transform="translate(977.05 149.949)"/>
+        <ellipse id="Ellipse_267" cx="1.954" cy="1.954" class="cls-1" data-name="Ellipse 267" rx="1.954" ry="1.954" transform="translate(983.492 156.406)"/>
+    </g>
+</svg>
