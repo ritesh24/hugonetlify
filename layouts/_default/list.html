@@ -26,7 +26,7 @@
                         {{ range .Pages }}
                         {{ if eq .Params.locality_type "City"}}
                         <div class="posts">                    
-                            <a href="{{ .URL }}"> {{ .Params.Home_pageHeading }} </a>
+                            <a href="{{ .URL }}"> {{ .Params.Title }} </a>
                             <!-- <div class="locality_description">{{ .Description }}</div> -->
                         </div>
                         {{end}}
