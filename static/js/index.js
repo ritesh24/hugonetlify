@@ -25,17 +25,11 @@ function navigationControl() {
 
 // GETTING LOCALITY ON CLICK OF THE OPTIONS THAT HAS BEEN SELECTED BY THE USER
 function gettingLocality(e){
-    console.log("CALLED");
-    // document.getElementById("selectedValue").value=e.target.innerText;
-    // document.getElementById("selectedValue").innerHTML=e.target.innerText;
-    // document.getElementById("localities_select").style.display="none";
     let postType=document.getElementById("postType").innerText
     let localityData=e.target.innerText.trim();
     localityData=localityData.replace(/ /g, "-")
-    console.log("localityData", localityData);
-    console.log("test", `/${postType}/${localityData}`)
-    var test=`/${postType}/${localityData}`
-    window.location.href =test
+    let url=`/${postType}/${localityData}`
+    window.location.href =url
 }
 
 
@@ -79,16 +73,17 @@ var utmSource = '-',
     return pincode.match(testingpara) ? true : false;
   }
 function capture_mobileNumber(phoneNumber) {
-    console.log("MOBILE COUNT FUNCTION HAS BEEN CALLED", phoneNumber);
+    ga('send', {
+        hitType: 'event',
+        eventCategory: 'product_Listing',
+        eventAction: 'Apply_now',
+        eventLabel: 'Product Listing Campaign'
+      });
     gtag('event', 'product_listing_apply', { 'event_label': 'productlisting_apply_now', 'event_category': 'button_click_productlisting'})
-    var phone = phoneNumber
-    console.log("phone", phone);
-    console.log("phoneValidation", phoneValidation(phone));
+    let phone = phoneNumber
     if(phoneValidation(phone)){
         mobileNumber = document.getElementById("mobile_number").value;
         pushMobileGoogleSheet(this, mobileNumber);
-        // document.getElementById("mobile_numberInput").style.display="none"
-        // document.getElementById("pincode_Input").style.display="block"
     }
     else{
         document.getElementById("mobile_errormessage").style.display="block"
@@ -114,7 +109,6 @@ function fetchingBasic_data(){
       return {date, month, year, hour, minutes, time, timeStamp}
 }
 function pushMobileGoogleSheet(target) {
-      console.log("PUSH MOBILE GOOOGLE SHEET HAS BEEN CALLED");
       let schemes = {}
       let url = 'https://vs.rupeek.com:446/gsheets';
       let requiredData=fetchingBasic_data();
@@ -136,74 +130,14 @@ function pushMobileGoogleSheet(target) {
       xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
       xhr.send( JSON.stringify(schemes))
       xhr.onload = function() {
-        console.log(`Loaded: ${xhr.status} ${xhr.response}`);
         document.getElementById("info_popup").style.display="block"
         document.getElementById("desktopinfo_popup").style.display="block"
       };
       xhr.onerror = function() { // only triggers if the request couldn't be made at all
-        alert(`Network Error`);
         document.getElementById("errorinfo_popup").style.display="block"
         document.getElementById("desktoperrorinfo_popup").style.display="block"
       };
   }
-
-
-
-// // function for updating data on last submit.
-//   function updateGoogleSheet(target) {
-//       console.log("updateGoogleSheet CALLED");
-//       let url = 'https://vs.rupeek.com:446/gsheets/update';
-
-//       // if ($(target).data('api') === 'third-party') {
-//       //     storeWebFlowSession(uniqueNumber)
-//       //     url = 'https://vs.rupeek.com:446/gsheets/thirdPartyLeadUpdate';
-//       // }
-//       let requiredData=fetchingBasic_data();
-//       // variable is used to store current date and time in DD-MM-YYYY Time Format
-//       let timeStamp = requiredData.timeStamp;
-//       let current_city=document.getElementById("current_city").innerText;
-//       let pin_code=document.getElementById("pincode").value;
-//       let pin_codeVerification=pincodeValidation(pin_code);
-//       console.log("pin_codeVerification",pin_codeVerification);
-//       // if name and mobile number enter user then click data push to api else throw error message
-//       if (mobileNumber && mobileNumber.length === 10 && current_city && pin_codeVerification) {
-//           // Object is used to store the sessionId,phone number,name,city,gclid,timestamp,utmsource,utmmedium,utmcampaign,user name and gold amount
-//           let schemes = {}
-//           schemes.sessionId = uniqueNumber;
-//           schemes.productListing_phone = mobileNumber;
-//           schemes.name = userName;
-//           schemes.timestamp = timeStamp;
-//           schemes.gclid = gclId;
-//           schemes.city = current_city;
-//           schemes.utmSource = utmSource;
-//           schemes.utmMedium = utmMedium;
-//           schemes.utmCampaign = utmCampaign;
-//           schemes.productListingUrl = currentUrl;
-//           schemes.dm_gold_amount = goldAmt;
-//           schemes.pin_code = pin_code;
-//           schemes.existing_loan = existingLoan;
-//           schemes.otp_verified_user = otpVerified;
-
-//           console.log("updateGoogleSheet schemes", schemes);
-//           // ajax api call
-//           let xhr = new XMLHttpRequest();
-//           xhr.open('POST', url)
-//           xhr.send(schemes)
-//           xhr.onload = function() {
-//             alert(`Loaded: ${xhr.status} ${xhr.response}`);
-//             document.getElementById("mobile_numberInput").style.display="block"
-//             document.getElementById("pincode_Input").style.display="none"
-//           };
-
-//           xhr.onerror = function() { // only triggers if the request couldn't be made at all
-//             alert(`Network Error`);
-//           };
-//       } else {
-//           console.log('error');
-//           document.getElementById("pincode_errormessage").style.display="block"
-//       }
-//   }
-
 
 
 

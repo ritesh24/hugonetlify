@@ -1,0 +1,52 @@
+
+<!-- NAVIGATION MENU GOES HERE>>>>>>>> -->
+<div class="navigation_wrapper">
+    <div class="navigation_innerWrapper">
+      <div class="left_nav">
+        <img class="rupeek_logo" src="../../images/uploads/logo_rupeek.svg" alt="ruppeek.com"/>
+        <div class="navrow_wrapper">
+          <p class="navrow_wrappertext approveby">Approved By</p>
+          <p class="navrow_wrappertext reserve_text">RESERVE</p>
+          <p class="navrow_wrappertext reserve_text">BANK OF INDIA</p>
+          <p class="navrow_wrappertext regn"> Regn No. N-02.00290</p>
+        </div>  
+        </div>
+      <div class="mid_nav">
+        <ul class="menuitem_ul">
+          <li class="menuitem_li"><a class="menuitem_href" href="https://rupeek.com/about" target="_blank">About</a></li>
+          <li class="menuitem_li"><a class="menuitem_href" href="https://rupeek.com/schemes" target="_blank">Schemes</a></li>
+          <li class="menuitem_li"><a class="menuitem_href" href="https://rupeek.com/loan-transfer" target="_blank">Loan Transfer</a></li>
+          <li class="menuitem_li"><a class="menuitem_href" href="https://rupeek.com/contact" target="_blank">Contact</a></li>
+          <li class="menuitem_li"><a class="menuitem_href" href="https://payments.rupeek.com/" target="_blank">Repay your Loan</a></li>
+        </ul>
+      </div>
+      <div class="right_nav">
+        <img class="nav_locationmarker" src="../../images/uploads/icon_location_white.svg" alt="marker"/>
+        {{ if .Params.Title }}
+          <span class="nav_cityname"><a href="#getintouch_wrapper">{{ .Params.Title }}</a></span>
+        {{ else }}
+          <span class="nav_cityname"><a href="/city/#listpost_wrapper">Other City</a></span>
+        {{ end }}
+  
+        
+        <!-- <div class="select_city">
+          <div class="select_citywrapper">
+            <ul class="select_cityul">
+                {{ range .Pages }}
+                <li class="select_cityli">
+                    <img class="nav_locationmarker" src="../../images/uploads/icon_location_gray.svg" alt="marker"/>
+                    <img class="nav_locationmarkerselected" src="../../images/uploads/icon_location_selected.svg" alt="marker"/>                   
+                      <a href="{{ .URL }}"> {{ .Params.title }} </a>
+                </li>
+                {{ end }}
+            </ul>
+          </div>
+        </div> -->
+      </div>
+      <a href="#" id="hambergmenu_icon" class="icon" >
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+  </div>
+  <!-- NAVIGATION MENU ENDS HERE>>>>>>>> -->
+  

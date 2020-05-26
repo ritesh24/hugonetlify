@@ -3,6 +3,7 @@ html, body{padding:0;margin:0;font-family: Arial, Helvetica, sans-serif;scroll-b
 ul,li{padding: 0;margin:0;list-style-type: none;}
 option{display: none;}
 .custom_link{text-decoration: none;color:#1287e5;}
+p{margin: 0px 0px;}
 select {-webkit-appearance: none;-moz-appearance: none;text-indent: 1px;text-overflow: '';}
 .cityhead{font-size: 36px;font-weight: 600;color:#000;padding:10px 10px;text-align: justify;} 
 .headpara{padding:0px 0px 0px 0px;margin:2px 0px;}
@@ -28,6 +29,28 @@ select {-webkit-appearance: none;-moz-appearance: none;text-indent: 1px;text-ove
 /* SELECT CITY CSS GOES HERE */
 .select_city{position: absolute;width: 95vw;background: #fff;z-index: 1;top: 75px;left: 15px;border: 1px solid #cdcdcd;box-shadow: 2px 1px 8px 6px #cdcdcd;border-radius: 10px;padding: 20px;}
 /* SELECT CITY CSS GOES HERE */
+
+
+/* NAVIGATION MENU CSS GOES HERE */
+  .navigation_wrapper{display: block;width:100%;padding:8px 30px;background: linear-gradient(90deg, #f26622, #f78f1e);}
+  .navigation_innerWrapper{display: flex;justify-content: space-evenly;align-items: center;width:85%;margin:0 auto}
+  .left_nav{display: flex;flex:2;}
+  .mid_nav{flex:3;}
+  .right_nav{flex:1;padding: 10px 30px;margin: 0 0px 0px 30px;border-left: 1px solid #fff;}
+  .navrow_wrapper{display:block;margin: 0 15px;border-left: 1px solid #fff;padding:0 0px 0px 15px;}
+  .navrow_wrappertext{color:#fff;padding: 0px 0;}
+  .approveby{font-size: 0.5rem;}
+  .reserve_text{font-size: 0.8rem;font-weight: 700;}
+  .regn{font-size: 0.5rem;}
+  .menuitem_ul{padding:0;margin:0;;display: flex;}
+  .menuitem_li{flex:auto;list-style-type:none;font-size: 1.0rem;font-weight: 400;}
+  .menuitem_href{color:#fff;text-decoration: none;}
+  .nav_cityname{padding:0 10px;font-size: 1.0rem;font-weight: 500;color:#fff;text-transform: capitalize;cursor: pointer;}
+  .nav_cityname a{text-decoration: none;;color:#fff}
+  .nav_locationmarker{vertical-align: middle;}
+  .select_cityli a{color:#484848;text-decoration: none;}    
+/* NAVIGATION MENU CSS ENDS HERE */
+
 
 /* LISR PAGE CSS GOES HERE... */
 .listpost_wrapper {display: flex;justify-content: left;flex-wrap: wrap;align-items: center;}
@@ -82,13 +105,7 @@ select {-webkit-appearance: none;-moz-appearance: none;text-indent: 1px;text-ove
 
 /* Media queries - Responsive timeline on screens less than 600px wide */
 @media screen and (max-width: 600px) {
-    .icon{display: block;}
-    .posts{width:100%}
-    .left{display: none;}
-    .rupeekstep_timeline::after {left: 31px;}
-    .timeline_container {width: 100%;padding-left: 70px;padding-right: 25px;}
-    .timeline_container::before {left: 60px;border: medium solid white;border-width: 10px 10px 10px 0;border-color: transparent white transparent transparent;}
-    .left::after, .right::after {left: 15px;}
+    
 }
 /* TIMELINE CSS ENDS HERE */
 
@@ -97,6 +114,29 @@ select {-webkit-appearance: none;-moz-appearance: none;text-indent: 1px;text-ove
 .para_section .data{margin:0px 0px;line-height: 1.5;}
 .para_section p{margin:0px 0px;line-height: 1.5;padding: 0px 0px 15px 0px;}
 /* PARA SECTION CSS ENDS HERE */
+
+/* MODAL CSS GOES HERE */
+/* The Modal (background) */
+.modal {display: none; position: fixed; z-index: 1;left: 0;top: 0;width: 100%; height: 100%; overflow: auto;background-image:linear-gradient(to right, rgb(198, 67, 39), rgb(243, 150, 43));}
+/* Modal Content */
+.modal-content {position: relative;background: linear-gradient(90deg, #f26622, #f78f1e);margin: auto;padding: 0;border: 1px solid #888;width: 100%;height:100vh;box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19); -webkit-animation-name: animatetop;-webkit-animation-duration: 0.4s;animation-name: animatetop;animation-duration: 0.4s}
+/* Add Animation */
+@-webkit-keyframes animatetop {from {top:-300px; opacity:0} to {top:0; opacity:1}}
+@keyframes animatetop {from {top:-300px; opacity:0}to {top:0; opacity:1}}
+/* The Close Button */
+.close {color: white;float: right;font-size: 28px;font-weight: bold;position: absolute;top: 10px;right:10px;}
+.close:hover,
+.close:focus {color: #000;text-decoration: none;cursor: pointer;}
+.modal-header {position: relative;padding: 30px 15px; background-color: transparent; color: white;}
+.modal-body {padding: 2px 16px;}
+.mobile_nav{display: block;width:100%;}
+.mobile_navul{display:block;width:100%;text-align: center;padding: 0;}
+.mobile_navli{width:100%;font-size: 18px;font-weight: 500;padding:10px;list-style-type: none;}
+.mobile_navli a{text-decoration: none;color:#fff;}
+/* MODAL CSS ENDS HERE */
+
+
+
 
 /* LEFT PART CSS GOES HERE.. */
 .leftWrapper{display: block;background-color: #ffeed9;position: -webkit-sticky;position: sticky;top: 0;width:100%}
@@ -172,6 +212,17 @@ select {-webkit-appearance: none;-moz-appearance: none;text-indent: 1px;text-ove
 
 /* @media only screen and (min-width: 600px) and (max-width: 768px) { */
 @media screen and (min-width : 320px) and (max-width :767px){
+    .icon{display: block;}
+    .posts{width:100%}
+    .left{display: none;}
+    .rupeekstep_timeline::after {left: 31px;}
+    .timeline_container {width: 100%;padding-left: 70px;padding-right: 25px;}
+    .timeline_container::before {left: 60px;border: medium solid white;border-width: 10px 10px 10px 0;border-color: transparent white transparent transparent;}
+    .left::after, .right::after {left: 15px;}
+    .navigation_innerWrapper{width: 100%;}
+    .mid_nav, .right_nav{display: none;}
+    .rupeek_logo{width:80px;height: auto;}
+    .icon{color:#fff}
     .mainContainer{width:100%}
     .left{display: none;}
     .rightPart{flex:unset;width:100%;padding: 0px 5px 0px 10px;}
