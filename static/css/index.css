@@ -177,6 +177,7 @@ input[type=number] {-moz-appearance: textfield;}
 .thankyou_info{color:#484848;font-size: 14px;font-weight: 400;text-align: center;}
 .thankyou_explore_button{display: block;width:100%;margin: 0 auto;}
 .explore_button{border:none;cursor: pointer;padding: 18px 5px;color: #fff;font-size: 16px;font-weight: 600;width: 100%;margin: 15px auto;display: block;border-radius: 27px;box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);background-image: linear-gradient(to bottom, #fe9411, #ff6300);}
+.explore_href{text-decoration: none;color:#fff}
 /* THANK YOU SECTION ENDS HERE */
 /* LEFT PART CSS ENDS HERE.. */
 
