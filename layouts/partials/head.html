@@ -6,7 +6,11 @@
     <meta name="author" content={{.Params.meta_author}}>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/index.css">
-    <link rel="cononical" href="/{{ .Params.postType}}/{{ .Params.Title }}">
+    {{ if .Params.cononical }}
+      <link rel="cononical" href="test">
+    {{ else }}
+      <link rel="cononical" href="test2">
+      {{end}}
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-229086812"></script>
     <!-- Google Analytics -->
     <script>
