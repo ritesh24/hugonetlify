@@ -1,71 +1,64 @@
-<!DOCTYPE html>
-<html>
-    {{ partial "head" .}}
-<body>
-<!-- OUTER CONTAINER -->
-<div class="outerContainer">
-    <div id="localities" style="display: none;">{{ .Params.sub_locality}}</div>
-    <div id="postType" style="display: none;">{{ .Params.postType}}</div>
-    <div id="current_city" style="display: none;">{{ .Params.Title }}</div>
-    <!-- {{ partial "navigation" .}} -->
-    {{ partial "navigation" .}}
-    <div class="mainContainer">
-        <!-- RIGHT PART/SECTION OF THE PAGE STARTS HERE -->
-        <div class= 'rightPart'>
-            {{ partial "pageHeading_section" .}}
-            {{ partial "staticdata" .}}
-            <div class="subWrapper">
-                <div class="para_section">
-                    <p class="data">{{.Params.sub_footerData}}</p>
-                </div>
-            </div> 
-            <div class="subWrapper">
-                {{ partial "getintouch_section" .}}
-            </div> 
-        </div>
-        <!-- LEFT PART/SECTION OF THE PAGE STARTS HERE -->
-        <div class= 'left'>
-            <div class="leftWrapper">
-                <div class="top_section">
-                    <p class="percentage">0.89%</p>
-                    <p class="interateRate">Per month interest rate*</p>
-                </div>
-                <div class="mid_section">
-                    <p class="paraone">gold loans made</p>
-                    <p class="paratwo">fair fast and flexible</p>
-                    <div class="led_imagewrapper">
-                        <!-- <div class="back_circle"></div> -->
-                        <!-- <img class="permonth_interestimgae" src="../../images/uploads/image-14@3x@2x.png" alt="permonth_interest"/> -->
-                    </div>
-                </div>
-                <!-- APPLY NOW WITH MOBILE NUMBER SECTION GOES HERE -->
-                <div class="bottom_section" id="mobile_numberInput">
-                    <div class="input_wrapper">
-                      <input class="mobile_no" type="number" id="left_mobile_number" onfocus="document.getElementById('mobile_errormessage').style.display='none'"  name="mobile_number" placeholder="Enter Your Mobile Number" minlength="10" maxlength="10" oninput="value = value.replace(/[^0-9]/g, '').replace(/(\.*)\./g, '$1');" required
-                      />
-                      <span class="mobile_errormessage" id="mobile_errormessage">Please enter valid Mobile Number</span>
-                      <button class="action_button" id="capture_mobileNumber" onclick="capture_mobileNumber(document.getElementById('left_mobile_number').value)" >Apply Now</button>
-                    </div>
-                </div>
-                {{ partial "desktopinfo_section" .}}
-                <div class="bottom_section" id="pincode_Input">
-                  <div class="input_wrapper">
-                    <input class="pincode" type="number" id="pincode" name="pincode" onfocus="document.getElementById('pincode_errormessage').style.display='none'" placeholder="Enter pincode" name="pincode" pattern="[0-9]{6}" maxlength="6" oninput="value = value.replace(/[^0-9]/g, '').replace(/(\.*)\./g, '$1');"
-                    />
-                    <span class="pincode_errormessage" id="pincode_errormessage">Please enter valid Pincode</span>
-                    <button class="action_button" onclick="updateGoogleSheet()">Apply Now</button>
-                  </div>
-                </div>
-            </div>
+{{ define "getin_touch" }}
+<div class="subWrapper">
+    {{ partial "getintouch_section" .}}
+</div>
+{{ end }}
+
+{{ define "pageLeft_part" }}
+<div class="leftWrapper">
+    <div class="leftinnerWrapper" id="leftinnerWrapper">
+    <div class="top_section">
+        <p class="percentage">0.89%</p>
+        <p class="interateRate">Per month interest rate*</p>
+    </div>
+    <div class="mid_section">
+        <p class="paraone">gold loans made</p>
+        <p class="paratwo">fair fast and flexible</p>
+        <div class="led_imagewrapper">
+            <!-- <div class="back_circle"></div> -->
+            <!-- <img class="permonth_interestimgae" src="../../images/uploads/image-14@3x@2x.png" alt="permonth_interest"/> -->
         </div>
     </div>
-    <!-- FOOTER GOES HERE -->
-    {{ partial "footer" .}}
-    {{ partial "menumodal_mobile" .}}
+    <!-- APPLY NOW WITH MOBILE NUMBER SECTION GOES HERE -->
+    <div class="bottom_section" id="mobile_numberInput">
+        <div class="input_wrapper">
+            <div class="inputbox">
+                <span class="country_code">+91</span>
+                <input class="mobile_no" type="number" id="left_mobile_number" onfocus="document.getElementById('mobile_errormessage').style.display='none';document.getElementById('desktopinfo_popup').style.display='none'"  name="mobile_number" placeholder="Enter Your Mobile Number" minlength="10" maxlength="10" oninput="value = value.replace(/[^0-9]/g, '').replace(/(\.*)\./g, '$1');" required
+                />
+            </div>  
+          <span class="mobile_errormessage" id="mobile_errormessage">Please enter valid Mobile Number</span>
+          <button class="action_button" id="capture_mobileNumber" onclick="capture_mobileNumber(document.getElementById('left_mobile_number').value)" >Apply Now</button>
+        </div>
+    </div>
+    {{ partial "desktopinfo_section" .}}
+    <div class="bottom_section" id="pincode_Input">
+      <div class="input_wrapper">
+        <input class="pincode" type="number" id="pincode" name="pincode" onfocus="document.getElementById('pincode_errormessage').style.display='none'" placeholder="Enter pincode" name="pincode" pattern="[0-9]{6}" maxlength="6" oninput="value = value.replace(/[^0-9]/g, '').replace(/(\.*)\./g, '$1');"
+        />
+        <span class="pincode_errormessage" id="pincode_errormessage">Please enter valid Pincode</span>
+        <button class="action_button" onclick="updateGoogleSheet()">Apply Now</button>
+      </div>
+    </div>
 </div>
+    {{ partial "thankyou_section" .}}
+</div>
+{{ end }}
+                
+                
+                
+            
 
 
 
-   <script src="/js/index.js"></script>
-</body>
-</html>
+
+
+
+
+
+
+
+
+
+
+

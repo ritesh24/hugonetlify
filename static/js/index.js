@@ -1,14 +1,28 @@
 // GETTING LOCALITY LIST ON PAGE LOAD (IIFE FUNCTION)
 (function fetchLocality(){
     let sublocalities=document.getElementById("localities").innerText.split(/[,\-_]/)
-    console.log("sublocalities", sublocalities);
     let postType=document.getElementById("postType").innerText
     for (i=0;i<sublocalities.length;i++)
     {
         let localityData=sublocalities[i].trim();
-        localityData=localityData.replace(/ /g, "-")
-        document.getElementById("localityname_desktop").innerHTML += "<a class='locality_name' href=/"+postType+"/"+localityData+"><div>"+sublocalities[i]+"</div></a>"
+        localityData=(localityData.replace(/ /g, "-")).toLowerCase()
+        if(document.getElementById("localityname_desktop") !== null ){
+            document.getElementById("localityname_desktop").innerHTML += "<a class='locality_name' href=/"+postType+"/"+localityData+"><div>"+sublocalities[i]+"</div></a>"
+        }
     }
+    let div = document.getElementById("localities_select");
+    let postElement=[];
+    document.querySelectorAll('.indivisualPost_href').forEach(function(element) {
+       postElement.push({"category":(element.innerText),"href":(element.href) });
+    });
+
+    for (i=0;i<postElement.length;i++)
+    {
+        let localityData=(postElement[i].category).trim();
+        let categoryURL=(postElement[i].href);
+        localityData=(localityData.replace(/ /g, "-")).toLowerCase()
+        document.getElementById("localities_select").innerHTML += "<li class='customselect_li localities_option'><a class='locality_name' href="+categoryURL+">"+localityData+"</a></li>"
+    };
 })()
 
 
@@ -63,30 +77,34 @@ var utmSource = '-',
       otpVerified = false;
       var currentUrl=window.location.href;
 
-  function phoneValidation(phoneNumber) {
-      let regEx = /^([6-9])([0-9]{9})$/g;
-      return phoneNumber.match(regEx) ? true : false;
-  }
-  function pincodeValidation(pincode){
-    console.log("pincode", pincode)
+function phoneValidation(phoneNumber) {
+    let regEx = /^([6-9])([0-9]{9})$/g;
+    return phoneNumber.match(regEx) ? true : false;
+}
+function pincodeValidation(pincode){
     let testingpara=/^[0-9]{1,6}$/;
     return pincode.match(testingpara) ? true : false;
-  }
+}
 function capture_mobileNumber(phoneNumber) {
+    // google analytics event on apply now
     ga('send', {
         hitType: 'event',
         eventCategory: 'product_Listing',
         eventAction: 'Apply_now',
-        eventLabel: 'Product Listing Campaign'
+        eventLabel: 'Product Listing Campaign',
+        non_interaction: true
       });
+    // gtag event on apply now
     gtag('event', 'product_listing_apply', { 'event_label': 'productlisting_apply_now', 'event_category': 'button_click_productlisting'})
+    
     let phone = phoneNumber
     if(phoneValidation(phone)){
-        mobileNumber = document.getElementById("mobile_number").value;
-        pushMobileGoogleSheet(this, mobileNumber);
+        pushMobileGoogleSheet(this, phone);
     }
     else{
         document.getElementById("mobile_errormessage").style.display="block"
+        document.getElementById("left_mobile_errormessage").style.display="block"
+
     }
   }
 function fetchingBasic_data(){
@@ -108,7 +126,7 @@ function fetchingBasic_data(){
       
       return {date, month, year, hour, minutes, time, timeStamp}
 }
-function pushMobileGoogleSheet(target) {
+function pushMobileGoogleSheet(target, phone) {
       let schemes = {}
       let url = 'https://vs.rupeek.com:446/gsheets';
       let requiredData=fetchingBasic_data();
@@ -118,11 +136,10 @@ function pushMobileGoogleSheet(target) {
 
       schemes.timestamp = timeStamp;
       schemes.sessionId = uniqueNumber;
-      schemes.unbounce_phone = mobileNumber;
+      schemes.unbounce_phone = phone;
       schemes.unbounceUrl = currentUrl;
-      schemes.city = current_city;
+      schemes.city = current_city ? current_city : "product_listing home page";
 
-      console.log("pushMobileGoogleSheet", schemes);
       // ajax api call
       let xhr = new XMLHttpRequest();
       xhr.open('POST', url)
@@ -130,12 +147,15 @@ function pushMobileGoogleSheet(target) {
       xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
       xhr.send( JSON.stringify(schemes))
       xhr.onload = function() {
-        document.getElementById("info_popup").style.display="block"
+        document.querySelectorAll('.thankyou_wrapper').forEach(function(element) {
+            element.style.display = 'block';
+        });
         document.getElementById("desktopinfo_popup").style.display="block"
+        document.getElementById("leftinnerWrapper").style.display="none"
+        document.getElementById("localities_bottomsection").style.display="none"
       };
       xhr.onerror = function() { // only triggers if the request couldn't be made at all
-        document.getElementById("errorinfo_popup").style.display="block"
-        document.getElementById("desktoperrorinfo_popup").style.display="block"
+        document.getElementById("errorinfo_popup").style.display="block"        
       };
   }
 

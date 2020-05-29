@@ -5,6 +5,9 @@ option{display: none;}
 .custom_link{text-decoration: none;color:#1287e5;}
 p{margin: 0px 0px;}
 select {-webkit-appearance: none;-moz-appearance: none;text-indent: 1px;text-overflow: '';}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {-webkit-appearance: none;margin: 0;}
+input[type=number] {-moz-appearance: textfield;}
 .cityhead{font-size: 36px;font-weight: 600;color:#000;padding:10px 10px;text-align: justify;} 
 .headpara{padding:0px 0px 0px 0px;margin:2px 0px;}
 .descriptionWrapper{font-size: 16px;font-weight: 300;color: inherit;text-align: justify;}
@@ -26,6 +29,13 @@ select {-webkit-appearance: none;-moz-appearance: none;text-indent: 1px;text-ove
 #errorinfo_popup{display: none;}
 #desktopinfo_popup{display: none;}
 #desktoperrorinfo_popup{display: none;}
+#localities_bottomsection{display: block;}
+
+
+/* country code css goes here */
+.inputbox{position: relative; width: 75%; display: block;margin: 0 auto;}
+.country_code{position: absolute;padding: 3px 8px;top: 13px;border-right: 2px solid #cdcdcd;}
+/* country code css goes here */
 /* SELECT CITY CSS GOES HERE */
 .select_city{position: absolute;width: 95vw;background: #fff;z-index: 1;top: 75px;left: 15px;border: 1px solid #cdcdcd;box-shadow: 2px 1px 8px 6px #cdcdcd;border-radius: 10px;padding: 20px;}
 /* SELECT CITY CSS GOES HERE */
@@ -139,11 +149,11 @@ select {-webkit-appearance: none;-moz-appearance: none;text-indent: 1px;text-ove
 
 
 /* LEFT PART CSS GOES HERE.. */
-.leftWrapper{display: block;background-color: #ffeed9;position: -webkit-sticky;position: sticky;top: 0;width:100%}
+.leftWrapper{display: block;background-color: #fff8ef;position: -webkit-sticky;position: sticky;top: 0;width:100%}
 .top_section .percentage{font-size: 60px;font-weight: 900;color:#480a00;text-align: center;text-shadow: 2px 2px #fe9144;margin:0px 0px}
-.interateRate{font-size: 21px;font-weight: 600;color:#480a00;text-align: center;margin:0px 0px}
-.paraone{font-size: 21px;font-weight: 600;color:#480a00;text-align: center;margin:0px 0px}
-.paratwo{font-size: 21px;font-weight: 600;color:#480a00;text-align: center;margin:0px 0px;padding: 0px 0px 15px 0px;}
+.interateRate{font-size: 20px;font-weight: 600;color:#480a00;text-align: center;margin:0px 0px}
+.paraone{font-size: 20px;font-weight: 600;color:#480a00;text-align: center;margin:0px 0px}
+.paratwo{font-size: 20px;font-weight: 600;color:#480a00;text-align: center;margin:0px 0px;padding: 0px 0px 15px 0px;}
 .mid_section{padding: 20px 0px;text-align: center;}
 .mid_section img{width:300px;height:250px;position: relative;}
 .top_section{padding: 40px 0px 20px 0px;}
@@ -151,13 +161,23 @@ select {-webkit-appearance: none;-moz-appearance: none;text-indent: 1px;text-ove
 #pincode_Input{display: none;}
 #mobile_errormessage{display:none;text-align: center;color:red;font-size: 9px;}
 #pincode_errormessage{display:none;text-align: center;color:red;font-size: 9px;}
-.mobile_no, .pincode{width: 75%;display: block;padding: 15px;border-radius: 5px;border: none;margin: 0 auto;font-size: 16px;}
-.action_button{cursor: pointer; padding: 18px 5px;color:#fff;font-size: 16px;font-weight: 600;   width:75%;margin:15px auto;display: block;border-radius: 27px;box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);background-image: linear-gradient(to bottom, #fe9411, #ff6300);}
+.mobile_no, .pincode{width: 100%;display: block;padding: 15px 15px 15px 55px;border-radius: 5px;border: none;margin: 0 auto;font-size: 16px;}
+.action_button{cursor: pointer;border:none; padding: 18px 5px;color:#fff;font-size: 16px;font-weight: 600;   width:75%;margin:15px auto;display: block;border-radius: 27px;box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);background-image: linear-gradient(to bottom, #fe9411, #ff6300);}
 .led_imagewrapper{position: relative;background-image: url(../../images/uploads/leftpart_img.webp);height: 275px;background-position: bottom;background-size: 80% 170%;background-repeat: no-repeat;background-position-y: bottom;}
 .led_imagewrapper .back_circle{position: absolute;width: 253px;height: 250px;border-radius: 50%;background-color: #fe9144;z-index: -1;bottom: 11px;left: 67px;}
 #left_mobile_errormessage{display:none;text-align: center;color:red;font-size: 9px;}
+.leftinnerWrapper{display: block;}
 /* .permonth_interestimgae{display: none;visibility: hidden;} */
 
+/* THANKYOU SECTION GOES HERE */
+#thankyou_wrapper{display: none;};
+.thankyou_wrapper{width:100%;padding: 40px 0px;}
+.thankyou_innerWrapper{display: block;width: 60%;margin: 0 auto;padding: 15px 0;}
+.thankyou_imgwrapper{background-image:url(../../images/uploads/thankyou.png);width:100%;height:200px;margin: 35px 0px; background-position: center;background-repeat: no-repeat;background-size: contain;}
+.thankyou_info{color:#484848;font-size: 14px;font-weight: 400;text-align: center;}
+.thankyou_explore_button{display: block;width:100%;margin: 0 auto;}
+.explore_button{border:none;cursor: pointer;padding: 18px 5px;color: #fff;font-size: 16px;font-weight: 600;width: 100%;margin: 15px auto;display: block;border-radius: 27px;box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);background-image: linear-gradient(to bottom, #fe9411, #ff6300);}
+/* THANK YOU SECTION ENDS HERE */
 /* LEFT PART CSS ENDS HERE.. */
 
 
@@ -193,7 +213,7 @@ select {-webkit-appearance: none;-moz-appearance: none;text-indent: 1px;text-ove
 .getintouch_wrapper{padding: 10px;background-color: #fafafa    ;}
 .getintouch_heading{font-size: 32px;font-weight: 600;color:#484848;text-align: center;}
 .getintouch_heading p{margin:0px 0px;padding:10px}
-.getintouch_subheading{font-size: 20x;font-weight: 700;color:#484848;text-align: center;}
+.getintouch_subheading{font-size: 20px;font-weight: 700;color:#484848;text-align: center;}
 .getintouch_subheading p{margin:0px 0px;padding: 0px 0px 40px 0px;}
 .localityname_section{display: flex;justify-content: space-around;align-items: center;flex-wrap: wrap;}
 .locality_name{width:30%;padding: 10px;margin-bottom:15px;font-size: 14px;font-weight: 700;text-decoration: none;color:#484848}

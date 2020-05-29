@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    {{ partial "head" .}}
+<body>
+    <div class="outerContainer">
+        <div id="localities" style="display: none;">{{ .Params.sub_locality}}</div>
+        <div id="postType" style="display: none;">{{ .Params.postType}}</div>
+        <div id="current_city" style="display: none;">{{ .Params.Title }}</div>
+        {{ block "navigation" .}}
+            {{ partial "navigation" .}}
+        {{end}}
+        <div class="mainContainer">
+            <!-- RIGHT PART/SECTION OF THE PAGE STARTS HERE -->
+            <div class= 'rightPart'>
+                {{ block "pageHeading_section" . }}
+                    {{ partial "pageHeading_section" .}}
+                {{ end }}
+
+                {{ block "static_data" . }}
+                    {{ partial "staticdata" .}}
+                {{ end }}
+
+                {{ block "subfooterdata" .}}
+                    <div class="subWrapper">
+                        <div class="para_section">
+                            <p class="data">{{.Params.sub_footerData}}</p>
+                        </div>
+                    </div> 
+                {{end}}
+
+                {{ block "getin_touch" . }}
+
+                {{end}}
+            </div>
+
+            <!-- LEFT PART/SECTION OF THE PAGE STARTS HERE -->
+            <div class= 'left'>
+                {{ block "pageLeft_part" .}}
+                {{end}}
+            </div>        
+        </div>
+            {{ block "footer" . }}
+                {{ partial "footer" .}}
+                {{ partial "menumodal_mobile" .}}
+            {{ end }}
+    </div>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="/js/index.js"></script>
+</body>
+</html>

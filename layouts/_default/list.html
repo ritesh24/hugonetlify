@@ -1,128 +1,33 @@
-
-<!DOCTYPE html>
-<html>
-    {{ partial "head" .}}
-<body>
-<!-- OUTER CONTAINER -->
-<div class="outerContainer">
-    <div id="localities" style="display: none;">{{ .Params.sub_locality}}</div>
-    <div id="postType" style="display: none;">{{ .Params.postType}}</div>
-    <div id="current_city" style="display: none;">{{ .Params.Title }}</div>
-    <!-- {{ partial "navigation" .}} -->
-    {{ partial "navigation" .}}
-    <div class="mainContainer">
-        <!-- RIGHT PART/SECTION OF THE PAGE STARTS HERE -->
-        <div class= 'rightPart'>
-            {{ partial "pageHeading_section" .}}
-            {{ partial "staticdata" .}}
-            <div class="subWrapper">
-                <div class="para_section">
-                    <p class="data">{{.Params.sub_footerData}}</p>
-                </div>
-            </div> 
-            <div class="subWrapper">
+{{ define "getin_touch" }}
+    <div class="subWrapper">
+        <div class="getintouch_wrapper" id="getintouch_wrapper">
+            <div class="getintouch_heading">
+                <p>Get in touch</p>
+            </div>
+            <div class="getintouch_subheading">
+                <p>We are available in 40+ areas in <span class="getintouch_city">{{ .Params.Title }}</span></p>
+            </div>
                 <div class="list">
                     <div class="listpost_wrapper" id="listpost_wrapper">
                         {{ range .Pages }}
-                        {{ if eq .Params.locality_type "City"}}
                         <div class="posts">                    
-                            <a href="{{ .URL }}"> {{ .Params.Title }} </a>
+                            <a class="indivisualPost_href" href="{{ .URL }}"> {{ .Page.Title }} </a>
                             <!-- <div class="locality_description">{{ .Description }}</div> -->
                         </div>
-                        {{end}}
                         {{ end }}
                     </div>     
                 </div>
-                <!-- {{ partial "getintouch_section" .}} -->
-            </div> 
-        </div>
-        <!-- LEFT PART/SECTION OF THE PAGE STARTS HERE -->
-        <div class= 'left'>
-            {{ partial "leftpart_section" .}}
-        </div>
-    </div>
-    <!-- FOOTER GOES HERE -->
-    {{ partial "footer" .}}
-    {{ partial "menumodal_mobile" .}}
-</div>
+            </div>
+        <!-- {{ partial "getintouch_section" .}} -->
+    </div> 
+{{ end }}
 
-
-
-    <script>
-        // GETTING LOCALITY LIST ON PAGE LOAD (IIFE FUNCTION)
-        (function fetchLocality(){
-            let sublocalities=document.getElementById("localities").innerText.split(/[,\-_]/)
-            console.log("sublocalities", sublocalities);
-            let postType=document.getElementById("postType").innerText
-            for (i=0;i<sublocalities.length;i++)
-            {
-                let localityData=sublocalities[i].trim();
-                localityData=localityData.replace(/ /g, "-")
-                document.getElementById("localityname_desktop").innerHTML += "<a class='locality_name' href=/"+postType+"/"+localityData+"><div>"+sublocalities[i]+"</div></a>"
-            }
-        })()
-
-
-        // NAVIGATION CONTROL FIUNCTION FOR HAMBERG CLICK
-        function navigationControl() {
-        let topNav_divData = document.getElementById("myTopnav");
-        if (topNav_divData.className === "topnav") {
-            topNav_divData.className += " responsive";
-        } else {
-            topNav_divData.className = "topnav";
-        }
-        }
-
-
-        // GETTING LOCALITY ON CLICK OF THE OPTIONS THAT HAS BEEN SELECTED BY THE USER
-        function gettingLocality(e){
-        document.getElementById("selectedValue").value=e.target.innerText;
-        document.getElementById("selectedValue").innerHTML=e.target.innerText;
-        document.getElementById("localities_select").style.display="none";
-        }
-
-        
-        // TOGGLE CUSTIOM MADE DROPDOWN FOR LOCALITY IN THE MOBILE
-        function toggleSelectoptions(id) {
-            let div = document.getElementById("localities_select");
-            let sublocalities=document.getElementById("localities").innerText.split(/[,\-_]/)
+{{ define "pageLeft_part" }}
+    {{ partial "leftpart_section" .}}
+{{ end }}
+                
+                
+                
             
-            for (i=0;i<sublocalities.length;i++)
-            {
-                let localityData=sublocalities[i].trim();
-                localityData=localityData.replace(/ /g, "-")
-                document.getElementById("localities_select").innerHTML += "<li class='customselect_li localities_option'><a class='locality_name' href=/"+postType+"/"+localityData+">"+sublocalities[i]+"</a></li>"
-            };
-            div.style.display = div.style.display == "block" ? "none" : "block";
-        }
 
-       
-    </script>
-</body>
-</html>
-<!-- <html>
-    <head>
-    <title></title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../css/index.css">
-    <style>
-        .listpost_wrapper {display: flex;justify-content: space-between;flex-wrap: wrap;align-items: center;}
-        .posts {box-shadow: 3px 0px 10px 0px #888888; width: 30%;text-align: center;background: linear-gradient(90deg, #f26622, #f78f1e);height: 100px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;color: #fff;font-size: 16px;padding: 20px;margin: 15px;}
-        .posts a{color:#fff;text-decoration: none;font-size: 22px;font-weight: 700;}
-        .locality_description{white-space: nowrap;overflow: hidden;text-overflow: ellipsis;padding: 10px 0;}
-    </style>
-  </head>
-  <body>
-        <div class="list">
-            <div class="listpost_wrapper">
-                {{ range .Pages }}
-                <div class="posts">                    
-                    <a href="{{ .URL }}"> {{ .Params.Home_pageHeading }} </a>
-                    <div class="locality_description">{{ .Description }}</div>
-                </div>
-                {{ end }}
-            </div>     
-        </div>
-      </body>
-</html> -->
+

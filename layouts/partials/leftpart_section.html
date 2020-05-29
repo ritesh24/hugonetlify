@@ -1,5 +1,6 @@
 <!-- LEFT PART OF THE PAGE ON DESKTOP FGOES HERE -->
 <div class="leftWrapper">
+    <div class="leftinnerWrapper" id="leftinnerWrapper">
     <div class="top_section">
         <p class="percentage">0.89%</p>
         <p class="interateRate">Per month interest rate*</p>
@@ -15,11 +16,18 @@
     <!-- APPLY NOW WITH MOBILE NUMBER SECTION GOES HERE -->
     <div class="bottom_section" id="mobile_numberInput">
         <div class="input_wrapper">
-          <input class="mobile_no" type="number" id="left_mobile_number" onfocus="document.getElementById('mobile_errormessage').style.display='none'"  name="mobile_number" placeholder="Enter Your Mobile Number" minlength="10" maxlength="10" oninput="value = value.replace(/[^0-9]/g, '').replace(/(\.*)\./g, '$1');" required
-          />
+            <div class="inputbox">
+                <span class="country_code">+91</span>
+                <input class="mobile_no" type="number" id="left_mobile_number" onfocus="document.getElementById('left_mobile_errormessage').style.display='none';document.getElementById('desktopinfo_popup').style.display='none'"  name="mobile_number" placeholder="Enter Your Mobile Number" minlength="10" maxlength="10" oninput="value = value.replace(/[^0-9]/g, '').replace(/(\.*)\./g, '$1');" required
+                />
+            </div> 
           <span class="mobile_errormessage" id="left_mobile_errormessage">Please enter valid Mobile Number</span>
           <button class="action_button" id="capture_mobileNumber" onclick="capture_mobileNumber(document.getElementById('left_mobile_number').value)" >Apply Now</button>
         </div>
     </div>
+    {{ partial "desktopinfo_section" .}}
+    </div> 
+    {{ partial "thankyou_section" .}}
+
 </div>
 <!-- LEFT PART OF THE PAGE ON DESKTOP ENDS HERE -->
