@@ -9,8 +9,8 @@
     {{ if .Params.cononical }}
       <link rel="cononical" href="{{ .Params.cononical}}">
     {{ else }}
-      <link rel="cononical" href="www.dummycononical.com">
-      {{end}}
+      <link rel="cononical" href="/{{ .Params.postType}}/{{ .Params.Title }}">
+    {{end}}
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-229086812"></script>
     <!-- Google Analytics -->
     <script>
