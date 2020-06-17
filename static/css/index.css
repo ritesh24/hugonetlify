@@ -8,7 +8,8 @@ select {-webkit-appearance: none;-moz-appearance: none;text-indent: 1px;text-ove
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {-webkit-appearance: none;margin: 0;}
 input[type=number] {-moz-appearance: textfield;}
-.cityhead{font-size: 36px;font-weight: 600;color:#000;padding:10px 10px;text-align: justify;} 
+.cityhead{padding:10px 10px}
+.cityhead h1{font-size: 36px;font-weight: 600;color:#000;;text-align: justify;margin:0 0;padding:0px 0px 0px 0px;margin:2px 0px;} 
 .headpara{padding:0px 0px 0px 0px;margin:2px 0px;}
 .descriptionWrapper{font-size: 16px;font-weight: 300;color: inherit;text-align: justify;}
 .mainContainer{display: flex; flex-direction: row;width:90%;margin:0 auto}
@@ -82,7 +83,7 @@ input[type=number] {-moz-appearance: textfield;}
 .image_section{padding: 5px;}
 .advantage_para{padding: 0px 0px 0px 15px;font-size: 14px;font-weight: 500;color:#484848}
 .image_section img{width:35px;height:35px}
-.rpkadv_heading{    display: block;font-size: 32px;font-weight: 700;font-family: Arial, Helvetica, sans-serif;text-align: center;color: #484848;}
+.rpkadv_heading{    display: block;font-size: 32px;font-weight: 700;font-family: Arial, Helvetica, sans-serif;text-align: center;color: #484848;margin:0 0;}
 
 
 /* LIST CSS GOES HERE */
@@ -90,7 +91,8 @@ input[type=number] {-moz-appearance: textfield;}
 .rupeek_list .list_li{list-style: none; position: relative;margin:15px 0}
 .rupeek_list .list_li::before{color: transparent;content: "\2022";display: inline-block;left: -20px;border-radius: 50%;height: 10px;background-image: linear-gradient(to bottom, #fca942, #fe9411);width: 10px;border-radius: 50%;top: 5px;position: absolute;}
 .rupeek_list .list_li p{margin:0px 0px 0px 0px;padding:2px 0}
-.list_heading{font-size: 20px;font-weight: 700;color: #484848;}
+.rupeek_list .list_li h3{margin:0px 0px 0px 0px;padding:2px 0}
+.list_heading{font-size: 20px;font-weight: 700;color: #484848;margin:0 0}
 .list_description{font-size: 16px;font-weight: 400;color:#484848;}
 .listdescription_link{text-decoration: none;color:#1287e5}
 /* LIST CSS ENDS HERE */
@@ -99,7 +101,7 @@ input[type=number] {-moz-appearance: textfield;}
 /* TIMELINE CSS GOES HERE */
 .timeline_description{padding: 0px 20px;}
 .timeline_mainhead{font-size: 32px;font-weight: 600;color:#484848;text-align: center;margin:0px 0px}
-.timeline_subhead{font-size: 20px;font-weight: 500;color:#727272;text-align: center;padding: 20px 0;}
+.timeline_subhead{font-size: 20px;font-weight: 500;color:#727272;text-align: center;padding: 20px 0;margin:0px 0px}
 .timeline_number{position: absolute;z-index: 2;top: 22px;left: -8px;color: #fff;font-size: 16px;font-weight: 800;}
 .timeline_heading{font-size: 20px;font-weight: 700;color:#480a00;margin:0px 0px 0px 0px;padding:5px 0}
 .timeline_section{width:100%;background-color: #fff;color:#000;padding: 10px;display: flex;justify-content: left;align-items: center;}
@@ -177,7 +179,6 @@ input[type=number] {-moz-appearance: textfield;}
 .thankyou_info{color:#484848;font-size: 14px;font-weight: 400;text-align: center;}
 .thankyou_explore_button{display: block;width:100%;margin: 0 auto;}
 .explore_button{border:none;cursor: pointer;padding: 18px 5px;color: #fff;font-size: 16px;font-weight: 600;width: 100%;margin: 15px auto;display: block;border-radius: 27px;box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);background-image: linear-gradient(to bottom, #fe9411, #ff6300);}
-.explore_href{text-decoration: none;color:#fff}
 /* THANK YOU SECTION ENDS HERE */
 /* LEFT PART CSS ENDS HERE.. */
 
@@ -202,6 +203,7 @@ input[type=number] {-moz-appearance: textfield;}
 .localities_wrapper{background-color: #f2f2f2;padding:15px 0;}
 .localities_topsection{display: block;width: 80%;margin: 0 auto;}
 .localities_headingpara{font-size: 18px;font-weight: 500;color:#969696}
+.bottomsection_heading h1{font-size: 21px;color:#484848;font-weight: 600;text-align: center;margin: 0px 0px;padding:2px}
 .bottomsection_heading p{font-size: 21px;color:#484848;font-weight: 600;text-align: center;margin: 0px 0px;padding:2px}
 .localities_bottomsection{padding: 20px;background-color: #fff8ef;}
 .localities_wrapper{display: none;}
@@ -213,8 +215,10 @@ input[type=number] {-moz-appearance: textfield;}
 /* GET IN TOUCH SECTION STARTS HERE>>>>>>>>*/
 .getintouch_wrapper{padding: 10px;background-color: #fafafa    ;}
 .getintouch_heading{font-size: 32px;font-weight: 600;color:#484848;text-align: center;}
+.getintouch_heading h1{margin:0px 0px;padding:10px;font-size: 32px;font-weight: 600;color:#484848;text-align: center;}
 .getintouch_heading p{margin:0px 0px;padding:10px}
 .getintouch_subheading{font-size: 20px;font-weight: 700;color:#484848;text-align: center;}
+.getintouch_subheading h3{margin:0px 0px;padding: 0px 0px 40px 0px;font-size: 20px;font-weight: 700;color:#484848;text-align: center;}
 .getintouch_subheading p{margin:0px 0px;padding: 0px 0px 40px 0px;}
 .localityname_section{display: flex;justify-content: space-around;align-items: center;flex-wrap: wrap;}
 .locality_name{width:30%;padding: 10px;margin-bottom:15px;font-size: 14px;font-weight: 700;text-decoration: none;color:#484848}
@@ -248,6 +252,7 @@ input[type=number] {-moz-appearance: textfield;}
     .left{display: none;}
     .rightPart{flex:unset;width:100%;padding: 0px 5px 0px 10px;}
     .cityhead{text-align: left;font-size: 24px;}
+    .cityhead h1{font-size: 24px;}
     .advantage_para{padding: 0px 0px 0px 0px;}
     .image_section img{width:20px;height:20px}
     .advantage_para{font-size: 12px;}
@@ -289,6 +294,7 @@ input[type=number] {-moz-appearance: textfield;}
     .mid_nav, .right_nav{display: none;}
     .icon{color:#fff;display: block;}
     .cityhead{text-align: left;font-size: 24px;}
+    .cityhead h1{font-size: 24px;}
     .para_section{font-size: 14px;}
     .list_heading{font-size: 16px;}
     .list_description{font-size: 14px;}
