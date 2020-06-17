@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: ajay17141994/hugonetlify  # Path to your GitHub repository
+  repo: ajay17141994/hugonetlify   # Path to your GitHub repository
 
 media_folder: "images/uploads"
 
@@ -27,6 +27,9 @@ collections:
         widget: "string"
       - label: "Meta Description"
         name: "meta_description"
+        widget: "string"
+      - label: "Meta title"
+        name: "meta_title"
         widget: "string"
       - label: "Meta Keyword"
         name: "meta_keywords"
@@ -84,6 +87,9 @@ collections:
         widget: "string"
       - label: "Meta Description"
         name: "meta_description"
+        widget: "string"
+      - label: "Meta title"
+        name: "meta_title"
         widget: "string"
       - label: "Meta Keyword"
         name: "meta_keywords"
@@ -150,6 +156,9 @@ collections:
         widget: "string"
       - label: "Meta Description"
         name: "meta_description"
+        widget: "string"
+      - label: "Meta title"
+        name: "meta_title"
         widget: "string"
       - label: "Meta Keyword"
         name: "meta_keywords"
