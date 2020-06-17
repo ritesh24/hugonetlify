@@ -1,27 +1,37 @@
 <head>
-    <title>{{.Params.titleTag}}</title>
+    {{ if .Params.titleTag }}
+      <title>{{.Params.titleTag}}</title>
+    {{ else }}
+      <title>Gold Loan in {{.Params.title}} with Rupeek</title>
+    {{end}} 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content={{.Params.meta_description}}>
+    <meta name="title" content={{.Params.meta_title}}>
     <meta name="keywords" content={{.Params.meta_keywords}}>
     <meta name="author" content={{.Params.meta_author}}>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/index.css">
     {{ if .Params.cononical }}
       <link rel="cononical" href="{{ .Params.cononical}}">
+    {{ else if and (.Params.postType) (.Params.Title) }}
+      <link rel="cononical" href="www.rupeek.com/india/{{ .Params.postType}}/{{ .Params.Title }}">
     {{ else }}
-      <link rel="cononical" href="/{{ .Params.postType}}/{{ .Params.Title }}">
-    {{end}}
+      <link rel="cononical" href="www.rupeek.com/india">
+    {{end}}    
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-229086812"></script>
     <!-- Google Analytics -->
-    <script>
+    <!-- <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
       })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
       
       ga('create', 'AW-229086812', 'auto');
-    </script>
+    </script> -->
   <!-- End Google Analytics -->
+  <!-- Segment Tracking Code -->
+  
+<!-- Segment Tracking Code Ends Here-->
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){
