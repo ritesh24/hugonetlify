@@ -1,8 +1,10 @@
 <head>
     {{ if .Params.titleTag }}
       <title>{{.Params.titleTag}}</title>
-    {{ else }}
+    {{ else if .Params.title }}
       <title>Gold Loan in {{.Params.title}} with Rupeek</title>
+    {{ else }}
+      <title>Gold Loan with Rupeek</title>
     {{end}} 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content={{.Params.meta_description}}>
